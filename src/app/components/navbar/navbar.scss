@@ -1,0 +1,137 @@
+
+/************************
+      VARIABLES
+***********************/
+$linkColor: #CCCCCC;
+$linkColorSelected: #FFFFFF;
+
+$bgColorHover: #183C6B;
+$bgColorSubMenuHover: #14335C;
+
+
+.left-nav {
+  padding: 0 0 0 0 !important;
+  background: rgb(28,67,122); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(28,67,122,1) 0%, rgba(67,103,152,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(28,67,122,1) 0%,rgba(67,103,152,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(28,67,122,1) 0%,rgba(67,103,152,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c437a', endColorstr='#436798',GradientType=0 ); /* IE6-9 */
+  height:100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-shadow: 2px 0 10px 0 rgba(0,0,0,0.3);
+  box-shadow: 2px 0 10px 0 rgba(0,0,0,0.3);
+  z-index: 1;
+}
+
+.mcp-sidenav {
+
+  li {
+
+    font-weight: bold !important;
+    margin: 0 !important;
+
+    a {
+
+      color: $linkColor !important;
+      -webkit-border-radius: 0 !important;
+      border-radius: 0 !important;
+
+      span.up {
+        -moz-transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+        -webkit-transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+        -o-transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+        -ms-transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+        transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+      }
+
+      span.down {
+        -moz-transform: scale(1) rotate(-90deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+        -webkit-transform: scale(1) rotate(-90deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+        -o-transform: scale(1) rotate(-90deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+        -ms-transform: scale(1) rotate(-90deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+        transform: scale(1) rotate(-90deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+      }
+
+    }
+
+    a:hover {
+      background-color: $bgColorHover !important;
+    }
+
+    a:focus {
+      background-color: transparent !important;
+    }
+
+  }
+
+  li.selected {
+
+    > a {
+      background-color: $bgColorHover !important;
+      color: $linkColorSelected !important;
+    }
+
+  }
+
+  /* sub menu links */
+  ul {
+
+    padding: 0 !important;
+    display: none;
+
+    li {
+
+      padding-left: 20px;
+      position: relative;
+      display: block;
+      list-style: none;
+
+      a {
+        color: $linkColor !important;
+        background-color: transparent !important;
+        text-decoration: none;
+        font-weight: normal !important;
+        position: relative;
+        display: block;
+        padding: 10px 15px;
+      }
+
+      a:hover {
+        background-color: transparent !important;
+      }
+
+    }
+
+    li {
+      background-color: $bgColorHover;
+    }
+
+    li:hover {
+      background-color: $bgColorSubMenuHover;
+    }
+
+    li.selected {
+      background-color: $bgColorSubMenuHover !important;
+      a {
+        color: $linkColorSelected !important;
+        background-color: $bgColorSubMenuHover !important;
+      }
+    }
+
+  }
+  ul.expanded {
+    display: block !important;
+  }
+
+}

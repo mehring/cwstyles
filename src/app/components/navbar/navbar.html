@@ -1,0 +1,55 @@
+<div class="left-nav
+            col-xs-12
+            col-sm-3
+            col-md-2
+            col-lg-2">
+
+    <img src="assets/images/logo.png"
+         class="img-responsive"
+         alt="logo" />
+
+    <ul class="nav nav-pills nav-stacked mcp-sidenav">
+        <li ng-repeat="navItem in vm.menu"
+            ng-class="{'selected': vm.selectedMenuId == navItem.id ||
+                                   navItem.expanded ||
+                                   vm.hasChildSelected(navItem.id)}">
+
+            <a ng-href="{{ navItem.href }}"
+               target="{{ navItem.target }}"
+               alt="{{ navItem.alt }}"
+               id="{{ navItem.id }}"
+               ng-click="vm.expandMenuItem(navItem.id);">
+
+                <span ng-if="navItem.icon.length"
+                      ng-class="navItem.icon"></span>
+
+                {{ navItem.label }}
+
+                <span ng-if="navItem.children.length"
+                      ng-class="{'pull-right': true,
+                                 'glyphicon': true,
+                                 'glyphicon-menu-left': true,
+                                 'up': !navItem.expanded,
+                                 'down': navItem.expanded}"></span>
+
+                <span class="badge pull-right" ng-if="navItem.badge">{{ navItem.badge }}</span>
+
+            </a>
+
+            <ul ng-class="{ expanded: navItem.expanded }">
+                <li ng-repeat="subNavItem in navItem.children"
+                    ng-class="{'selected': vm.selectedMenuId == subNavItem.id}">
+                    <a ng-href="{{ subNavItem.href }}"
+                       target="{{ subNavItem.target }}"
+                       alt="{{ subNavItem.alt }}"
+                       id="{{ subNavItem.id }}"
+                       ng-click="vm.selectedMenuId = subNavItem.id">
+                        {{ subNavItem.label }}
+                    </a>
+                </li>
+            </ul>
+
+        </li>
+    </ul>
+
+</div>
