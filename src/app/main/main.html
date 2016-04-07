@@ -1,8 +1,14 @@
+<style type="text/css">
+    .grid {
+        height: 600px;
+    }
+</style>
+
 <titlebar />
 
 <div class="body-content padded">
 
-    <h2>Buttons</h2>
+    <h3 class="style-section" style="margin-top: 20px;">Buttons</h3>
 
     <table class="table table-bordered">
         <tbody>
@@ -31,13 +37,16 @@
         <tr>
             <td>Toolbar Buttons</td>
             <td>
-                <a class="btn btn-default btn-icon">
+                <a class="btn btn-default btn-icon"
+                   uib-tooltip="Options">
                     <span class="glyphicon glyphicon-cog"></span>
                 </a>
-                <a class="btn btn-default btn-icon">
+                <a class="btn btn-default btn-icon"
+                   uib-tooltip="Flag">
                     <span class="glyphicon glyphicon-flag"></span>
                 </a>
-                <a class="btn btn-default btn-icon">
+                <a class="btn btn-default btn-icon"
+                   uib-tooltip="Refresh">
                     <span class="glyphicon glyphicon-repeat"></span>
                 </a>
             </td>
@@ -49,14 +58,15 @@
 
                 <form class="form-inline">
                     <div class="form-group">
-                        <label for="exampleInputName2" style="font-weight: normal;">Email: </label>
+                        <label class="cw-field-label">
+                            Email:
+                        </label>
                         <input type="text"
-                               style="margin-left: 10px;"
-                               class="form-control input-sm" />
+                               class="cw-text-field" />
+                        <button type="submit" class="btn btn-default btn-icon" style="margin-left: 6px">
+                            <span class="glyphicon glyphicon-envelope"></span>
+                        </button>
                     </div>
-                    <button type="submit" class="btn btn-default btn-icon" style="margin-left: 6px">
-                        <span class="glyphicon glyphicon-envelope"></span>
-                    </button>
                 </form>
 
             </td>
@@ -65,11 +75,289 @@
         <tr>
             <td style="width: 200px;">Button w/ Dropdown</td>
             <td>
-                <a class="btn btn-default">Button Example</a>
+                <div class="btn-group"
+                     uib-dropdown
+                     dropdown-append-to-body>
+                    <button type="button"
+                            class="btn btn-default"
+                            uib-dropdown-toggle>
+                        Button Example
+                        <span class="caret dropdown-icon" />
+                    </button>
+                    <ul class="dropdown-menu"
+                        uib-dropdown-menu>
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                </div>
+                <div class="btn-group"
+                     uib-dropdown
+                     dropdown-append-to-body>
+                    <button type="button"
+                            class="btn btn-default btn-icon"
+                            uib-dropdown-toggle>
+                        <span class="glyphicon glyphicon-cog"></span>
+                        <span class="caret dropdown-icon" />
+                    </button>
+                    <ul class="dropdown-menu"
+                        uib-dropdown-menu>
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="width: 200px;">Simple Paging Control</td>
+            <td>
+                <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></button>
+                    <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></button>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="width: 200px;">Complex Paging Control</td>
+            <td>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </button>
+                    <button type="button" class="btn btn-default">
+                        1-10 of 512 <span class="caret dropdown-icon" />
+                    </button>
+                    <button type="button" class="btn btn-default">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </button>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="width: 200px;">Segmented Control</td>
+            <td>
+                <div class="btn-group cw-segmented-control">
+                    <label class="btn btn-default" ng-model="main.radioModel" uib-btn-radio="'Day'">Day</label>
+                    <label class="btn btn-default" ng-model="main.radioModel" uib-btn-radio="'Week'">Week</label>
+                    <label class="btn btn-default" ng-model="main.radioModel" uib-btn-radio="'Next 7'">Next 7</label>
+                    <label class="btn btn-default" ng-model="main.radioModel" uib-btn-radio="'Month'">Month</label>
+                    <label class="btn btn-default" ng-model="main.radioModel" uib-btn-radio="'Agenda'">Agenda</label>
+                </div>
             </td>
         </tr>
 
         </tbody>
     </table>
+
+
+
+    <h3 class="style-section">Forms</h3>
+
+    <table class="table table-bordered">
+        <tbody>
+
+        <tr>
+            <td style="width: 200px;">Input Field</td>
+            <td>
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label class="cw-field-label">
+                            Label:
+                        </label>
+                        <input type="text"
+                               class="cw-text-field" />
+                    </div>
+                </form>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="width: 200px;">Dropdown</td>
+            <td>
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label class="cw-field-label">
+                            Label:
+                        </label>
+                        <div class="btn-group nudge-right"
+                             uib-dropdown>
+                            <button type="button"
+                                    class="cw-dropdown-field"
+                                    uib-dropdown-toggle>
+                                <span class="caret dropdown-icon pull-right" />
+                            </button>
+                            <ul class="dropdown-menu"
+                                uib-dropdown-menu>
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="width: 200px;">Textarea</td>
+            <td>
+                <textarea class="form-control" style="max-width: 350px;"></textarea>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+
+    <h3 class="style-section">Simple Table</h3>
+
+    <table class="table table-striped table-hover cwtable">
+        <thead>
+        <tr>
+            <th class="center-align" style="width: 70px;">
+                Enabled
+            </th>
+            <th>
+                Release Name
+            </th>
+            <th>
+                Agent Version
+            </th>
+            <th class="center-align" style="width: 180px;">
+                Actions
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="center-align action-button-cell">
+                <a class="btn btn-default btn-icon">
+                    <span class="glyphicon glyphicon-ok color-green"></span>
+                </a>
+            </td>
+            <td>
+                <a href class="table-link">LabTech 10.5</a>
+            </td>
+            <td>
+                105.226
+            </td>
+            <td class="center-align action-button-cell">
+                <a class="btn btn-default positive-action btn-icon"
+                   uib-tooltip="Send">
+                    <span class="glyphicon glyphicon-send"></span>
+                </a>
+                <a class="btn btn-default btn-icon"
+                   uib-tooltip="Copy">
+                    <span class="glyphicon glyphicon-duplicate"></span>
+                </a>
+                <a class="btn btn-default negative-action btn-icon"
+                   uib-tooltip="Delete">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td class="center-align action-button-cell">
+                <a class="btn btn-default btn-icon">
+                    <span class="glyphicon glyphicon-remove color-red"></span>
+                </a>
+            </td>
+            <td>
+                <a href class="table-link">LabTech 10.5 (copy)</a>
+            </td>
+            <td>
+                105.226
+            </td>
+            <td class="center-align action-button-cell">
+                <a class="btn btn-default positive-action btn-icon"
+                   uib-tooltip="Send">
+                    <span class="glyphicon glyphicon-send"></span>
+                </a>
+                <a class="btn btn-default btn-icon"
+                   uib-tooltip="Copy">
+                    <span class="glyphicon glyphicon-duplicate"></span>
+                </a>
+                <a class="btn btn-default negative-action btn-icon"
+                   uib-tooltip="Delete">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td class="center-align action-button-cell">
+                <a class="btn btn-default btn-icon">
+                    <span class="glyphicon glyphicon-ok color-green"></span>
+                </a>
+            </td>
+            <td>
+                <a href class="table-link">LabTech 10</a>
+            </td>
+            <td>
+                100.332
+            </td>
+            <td class="center-align action-button-cell">
+                <a class="btn btn-default positive-action btn-icon"
+                   uib-tooltip="Send">
+                    <span class="glyphicon glyphicon-send"></span>
+                </a>
+                <a class="btn btn-default btn-icon"
+                   uib-tooltip="Copy">
+                    <span class="glyphicon glyphicon-duplicate"></span>
+                </a>
+                <a class="btn btn-default negative-action btn-icon"
+                   uib-tooltip="Delete">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td class="center-align action-button-cell">
+                <a class="btn btn-default btn-icon">
+                    <span class="glyphicon glyphicon-ok color-green"></span>
+                </a>
+            </td>
+            <td>
+                <a href class="table-link">LabTech 2013</a>
+            </td>
+            <td>
+                60.170
+            </td>
+            <td class="center-align action-button-cell">
+                <a class="btn btn-default positive-action btn-icon"
+                   uib-tooltip="Send">
+                    <span class="glyphicon glyphicon-send"></span>
+                </a>
+                <a class="btn btn-default btn-icon"
+                   uib-tooltip="Copy">
+                    <span class="glyphicon glyphicon-duplicate"></span>
+                </a>
+                <a class="btn btn-default negative-action btn-icon"
+                   uib-tooltip="Delete">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+
+
+    <h3 class="style-section">Complex Grid</h3>
+
+    <div ui-grid="main.uiGridOptions"
+         ui-grid-resize-columns
+         ui-grid-auto-resize
+         ui-grid-selection
+         ui-grid-pinning
+         class="grid"></div>
 
 </div>

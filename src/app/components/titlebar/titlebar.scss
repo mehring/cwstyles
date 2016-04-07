@@ -15,6 +15,7 @@ $titlebar-height: 56px;
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e4e4e4',GradientType=0 ); /* IE6-9 */
   align-items: center;
   height: $titlebar-height;
+  z-index: 10000;
 
   .titlebar-title {
     color: #000000;

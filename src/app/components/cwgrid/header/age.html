@@ -1,0 +1,17 @@
+<div ng-class="{ 'sortable': sortable,
+                 'header-cell': true,
+                 'cwgrid-header-cell': true }">
+
+    <div class="header-cell-label hover-pointer"
+         style="text-align: center;"
+         ng-click="grid.appScope.changeSorting(col.displayName)">
+        {{ col.displayName }}
+        <span ng-if="grid.appScope.filters.sort.column == 'Age'"
+              ng-class="{'caret': true, 'rotate-180': !grid.appScope.filters.sort.descending }"></span>
+    </div>
+
+    <input type="text"
+           class="cw-text-field cwgrid-header-text-field"
+           ng-model="grid.appScope.filters.Age" />
+
+</div>

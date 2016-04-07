@@ -6,9 +6,17 @@
 
 .btn-icon {
   font-size: 16px;
-  width: 26px;
-  height: 23px;
-  padding: 2px 4px;
+  height: 27px;
+  padding: 2px 8px;
+  .glyphicon {
+    position: relative;
+    top: 2px;
+  }
+  .caret {
+    margin-right: 2px;
+    position: relative;
+    top: -2px;
+  }
 }
 
 .btn:hover {

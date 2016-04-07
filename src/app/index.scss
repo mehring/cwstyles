@@ -12,9 +12,18 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
 // bower:scss
 // endbower
 
+.hover-pointer:hover { cursor: pointer; }
 .nomargins { margin: 0 !important; }
 .nopadding { padding: 0 !important; }
 .padded { padding: 10px; }
+
+.rotate-180 {
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
 
 .body-content {
   margin-top: 56px;

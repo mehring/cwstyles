@@ -10,6 +10,12 @@
             'ngMessages',
             'ngResource',
             'ui.router',
-            'ui.bootstrap'
+            'ui.bootstrap',
+            'ui.select',
+            'ui.grid',
+            'ui.grid.resizeColumns',
+            'ui.grid.autoResize',
+            'ui.grid.selection',
+            'ui.grid.pinning'
         ]);
 })();

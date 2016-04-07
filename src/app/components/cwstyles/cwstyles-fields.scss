@@ -1,0 +1,50 @@
+.cw-field-label {
+  font-weight: normal;
+}
+
+.cw-text-field {
+  background-color: #FFFFFF;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  color: #000000;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #B3B3B3;
+  padding: 6px;
+  height: 24px;
+  margin-left: 10px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  min-width: 300px;
+}
+
+.cw-dropdown-field {
+  min-width: 300px;
+  background-color: #FFFFFF;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  color: #000000;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #B3B3B3;
+  padding: 6px;
+  height: 24px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.cw-segmented-control {
+  label.active {
+    background: #dce6f0; /* Old browsers */
+    background: -moz-linear-gradient(top,  #dce6f0 0%, #c9d5e0 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #dce6f0 0%,#c9d5e0 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #dce6f0 0%,#c9d5e0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dce6f0', endColorstr='#c9d5e0',GradientType=0 ); /* IE6-9 */
+    -webkit-box-shadow: 0 0 0 0 rgba(0,0,0,0);
+    box-shadow: 0 0 0 0 rgba(0,0,0,0);
+  }
+}
