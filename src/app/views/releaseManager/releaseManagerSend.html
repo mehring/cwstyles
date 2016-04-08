@@ -1,0 +1,72 @@
+<style type="text/css">
+    .grid {
+        height: 600px;
+    }
+</style>
+
+<titlebar />
+
+<div class="body-content padded">
+
+    <div class="cwtoolbar">
+        <a href="#">ConnectWise Styles</a>
+        <span class="glyphicon glyphicon-menu-right"></span>
+        <a href="#/release-manager">Release Manager</a>
+        <span class="glyphicon glyphicon-menu-right"></span>
+        Send Release
+        <span class="glyphicon glyphicon-menu-right"></span>
+        LabTech 10.5
+    </div>
+
+    <div class="cwtoolbar">
+
+        <span class="pull-left">
+
+            <a href="#/release-manager" class="btn btn-default btn-icon"
+               uib-tooltip="Back">
+                <span class="glyphicon glyphicon-arrow-left"></span>
+            </a>
+
+            <div class="vertical-rule"></div>
+
+            <!--<span class="pull-left">
+                <form class="form-inline">
+                    <strong>Send Release:</strong>
+                    <div class="form-group">
+                        <input id="sendReleaseNow" type="radio" checked />
+                        <label for="sendReleaseNow" style="font-weight: normal">
+                            Now
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <input id="sendReleaseOnDate" type="radio" />
+                        <label for="sendReleaseOnDate" style="font-weight: normal">
+                            On Date:
+                        </label>
+                        <input type="text"
+                               class="cw-text-field"
+                               style="display: inline-block; width: 150px; margin-right: 8px;" />
+                    </div>
+                </form>
+            </span>-->
+
+            <a class="btn btn-default positive-action btn-icon">
+                <span class="glyphicon glyphicon-send"></span>
+                <span class="btn-icon-text">Send Release</span>
+            </a>
+
+        </span>
+
+        <div class="clearfix"></div>
+
+    </div>
+
+    <div ui-grid="main.uiGridOptions"
+         ui-grid-resize-columns
+         ui-grid-auto-resize
+         ui-grid-selection
+         ui-grid-pinning
+         class="grid"></div>
+
+
+</div>

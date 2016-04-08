@@ -8,12 +8,6 @@
     /** @ngInject */
     function routerConfig($stateProvider, $urlRouterProvider) {
         $stateProvider
-            .state('home', {
-                url: '/',
-                templateUrl: 'app/main/main.html',
-                controller: 'MainController',
-                controllerAs: 'main'
-            })
             .state('buttons', {
                 url: '/buttons',
                 templateUrl: 'app/views/buttons/buttons.html',
@@ -30,6 +24,24 @@
                 url: '/grid',
                 templateUrl: 'app/views/grid/grid.html',
                 controller: 'GridController',
+                controllerAs: 'main'
+            })
+            .state('main', {
+                url: '/',
+                templateUrl: 'app/views/main/main.html',
+                controller: 'MainController',
+                controllerAs: 'main'
+            })
+            .state('release-manager', {
+                url: '/release-manager',
+                templateUrl: 'app/views/releaseManager/releaseManager.html',
+                controller: 'ReleaseManagerController',
+                controllerAs: 'main'
+            })
+            .state('release-manager-send', {
+                url: '/release-manager-send',
+                templateUrl: 'app/views/releaseManager/releaseManagerSend.html',
+                controller: 'ReleaseManagerSendController',
                 controllerAs: 'main'
             })
             .state('table', {
