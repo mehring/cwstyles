@@ -61,3 +61,49 @@
   border: 1px solid #d2d2d2;
   color: #000000 !important;
 }
+
+.cwtoolbar {
+  padding: 14px 0 7px 0;
+
+  .pull-left {
+
+    .btn {
+      float: left;
+      margin-right: 8px;
+    }
+
+    .vertical-rule {
+      float: left;
+      display: inline-block;
+      width: 8px;
+      height: 27px;
+      border-left: 1px solid #CCCCCC;
+    }
+
+  }
+
+  .pull-right {
+
+    .btn-group {
+      float: right;
+      margin-left: 8px;
+    }
+
+    :not(.btn-group) {
+      .btn {
+        float: right;
+        margin-left: 8px;
+      }
+    }
+
+    .vertical-rule {
+      float: right;
+      display: inline-block;
+      width: 8px;
+      height: 27px;
+      border-right: 1px solid #CCCCCC;
+    }
+
+  }
+
+}

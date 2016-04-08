@@ -45,7 +45,12 @@ $titlebar-height: 56px;
   .titlebar-link.active {
     color: #000000;
     background: #E4E4E4;
-    border-bottom: thin solid #ADADAD;
+    border-bottom: thin solid #C9C9C9;
+    background: rgb(255,255,255); /* Old browsers */
+    background: -moz-linear-gradient(bottom,  rgba(255,255,255,1) 0%, rgba(228,228,228,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(bottom,  rgba(255,255,255,1) 0%,rgba(228,228,228,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to top,  rgba(255,255,255,1) 0%,rgba(228,228,228,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4e4e4', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
   }
 
 }

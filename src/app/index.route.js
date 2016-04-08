@@ -37,6 +37,12 @@
                 templateUrl: 'app/views/table/table.html',
                 controller: 'TableController',
                 controllerAs: 'main'
+            })
+            .state('tabs', {
+                url: '/tabs',
+                templateUrl: 'app/views/tabs/tabs.html',
+                controller: 'TabsController',
+                controllerAs: 'main'
             });
 
         $urlRouterProvider.otherwise('/');
