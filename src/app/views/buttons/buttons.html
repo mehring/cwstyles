@@ -10,152 +10,155 @@
 
     <h3 class="style-section">Buttons</h3>
 
-    <table class="table table-bordered">
-        <tbody>
 
-        <tr>
-            <td style="width: 200px;">General Button</td>
-            <td>
-                <a class="btn btn-default">Button Example</a>
-            </td>
-        </tr>
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6">
 
-        <tr>
-            <td>Positive Button</td>
-            <td>
-                <a class="btn btn-default positive-action">Button Example</a>
-            </td>
-        </tr>
+            <ng-form class="form-horizontal cw-form" name="inlineFormExample">
 
-        <tr>
-            <td>Negative Button</td>
-            <td>
-                <a class="btn btn-default negative-action">Button Example</a>
-            </td>
-        </tr>
-
-        <tr>
-            <td>Toolbar Buttons</td>
-            <td>
-                <a class="btn btn-default btn-icon"
-                   uib-tooltip="Options">
-                    <span class="glyphicon glyphicon-cog"></span>
-                </a>
-                <a class="btn btn-default btn-icon"
-                   uib-tooltip="Flag">
-                    <span class="glyphicon glyphicon-flag"></span>
-                </a>
-                <a class="btn btn-default btn-icon"
-                   uib-tooltip="Refresh">
-                    <span class="glyphicon glyphicon-repeat"></span>
-                </a>
-            </td>
-        </tr>
-
-        <tr>
-            <td>Field Context</td>
-            <td>
-
-                <form class="form-inline">
-                    <div class="form-group">
-                        <label class="cw-field-label">
-                            Email:
-                        </label>
-                        <input type="text"
-                               class="cw-text-field" />
-                        <button type="submit" class="btn btn-default btn-icon" style="margin-left: 6px">
-                            <span class="glyphicon glyphicon-envelope"></span>
-                        </button>
+                <div class="form-group">
+                    <label class="cw-field-label col-xs-2 control-label">
+                        <span class="pull-left">General</span>
+                    </label>
+                    <div class="col-xs-10">
+                        <a class="btn btn-default">Button Example</a>
                     </div>
-                </form>
-
-            </td>
-        </tr>
-
-        <tr>
-            <td>Button w/ Dropdown</td>
-            <td>
-                <div class="btn-group"
-                     uib-dropdown
-                     dropdown-append-to-body>
-                    <button type="button"
-                            class="btn btn-default"
-                            uib-dropdown-toggle>
-                        Button Example
-                        <span class="caret dropdown-icon" />
-                    </button>
-                    <ul class="dropdown-menu"
-                        uib-dropdown-menu>
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
                 </div>
-                <div class="btn-group"
-                     uib-dropdown
-                     dropdown-append-to-body>
-                    <button type="button"
-                            class="btn btn-default btn-icon"
-                            uib-dropdown-toggle>
-                        <span class="glyphicon glyphicon-cog"></span>
-                        <span class="caret dropdown-icon" />
-                    </button>
-                    <ul class="dropdown-menu"
-                        uib-dropdown-menu>
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
-                </div>
-            </td>
-        </tr>
 
-        <tr>
-            <td>Simple Paging Control</td>
-            <td>
-                <div class="btn-group" role="group" aria-label="...">
-                    <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></button>
-                    <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></button>
+                <div class="form-group">
+                    <label class="cw-field-label col-xs-2 control-label">
+                        <span class="pull-left">Positive</span>
+                    </label>
+                    <div class="col-xs-10">
+                        <a class="btn btn-default positive-action">Button Example</a>
+                    </div>
                 </div>
-            </td>
-        </tr>
 
-        <tr>
-            <td>Complex Paging Control</td>
-            <td>
-                <div class="btn-group">
-                    <button type="button" class="btn btn-default">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                    </button>
-                    <button type="button" class="btn btn-default">
-                        1-10 of 512 <span class="caret dropdown-icon" />
-                    </button>
-                    <button type="button" class="btn btn-default">
-                        <span class="glyphicon glyphicon-chevron-right"></span>
-                    </button>
+                <div class="form-group">
+                    <label class="cw-field-label col-xs-2 control-label">
+                        <span class="pull-left">Negative</span>
+                    </label>
+                    <div class="col-xs-10">
+                        <a class="btn btn-default negative-action">Button Example</a>
+                    </div>
                 </div>
-            </td>
-        </tr>
 
-        <tr>
-            <td>Segmented Control</td>
-            <td>
-                <div class="btn-group cw-segmented-control">
-                    <label class="btn btn-default" ng-model="main.radioModel" uib-btn-radio="'Day'">Day</label>
-                    <label class="btn btn-default" ng-model="main.radioModel" uib-btn-radio="'Week'">Week</label>
-                    <label class="btn btn-default" ng-model="main.radioModel" uib-btn-radio="'Next 7'">Next 7</label>
-                    <label class="btn btn-default" ng-model="main.radioModel" uib-btn-radio="'Month'">Month</label>
-                    <label class="btn btn-default" ng-model="main.radioModel" uib-btn-radio="'Agenda'">Agenda</label>
+                <div class="form-group">
+                    <label class="cw-field-label col-xs-2 control-label">
+                        <span class="pull-left">Toolbar</span>
+                    </label>
+                    <div class="col-xs-10">
+                        <a class="btn btn-default btn-icon"
+                           uib-tooltip="Options">
+                            <span class="glyphicon glyphicon-cog"></span>
+                        </a>
+                        <a class="btn btn-default btn-icon"
+                           uib-tooltip="Flag">
+                            <span class="glyphicon glyphicon-flag"></span>
+                        </a>
+                        <a class="btn btn-default btn-icon"
+                           uib-tooltip="Refresh">
+                            <span class="glyphicon glyphicon-repeat"></span>
+                        </a>
+                    </div>
                 </div>
-            </td>
-        </tr>
 
-        </tbody>
-    </table>
+                <div class="form-group">
+                    <label class="cw-field-label col-xs-2 control-label">
+                        <span class="pull-left">Dropdown</span>
+                    </label>
+                    <div class="col-xs-10">
+                        <div class="btn-group"
+                             uib-dropdown
+                             dropdown-append-to-body>
+                            <button type="button"
+                                    class="btn btn-default"
+                                    uib-dropdown-toggle>
+                                Button Example
+                                <span class="caret dropdown-icon" />
+                            </button>
+                            <ul class="dropdown-menu"
+                                uib-dropdown-menu>
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </div>
+                        <div class="btn-group"
+                             uib-dropdown
+                             dropdown-append-to-body>
+                            <button type="button"
+                                    class="btn btn-default btn-icon"
+                                    uib-dropdown-toggle>
+                                <span class="glyphicon glyphicon-cog"></span>
+                                <span class="caret dropdown-icon" />
+                            </button>
+                            <ul class="dropdown-menu"
+                                uib-dropdown-menu>
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="cw-field-label col-xs-2 control-label">
+                        <span class="pull-left">Simple Paging</span>
+                    </label>
+                    <div class="col-xs-10">
+                        <div class="btn-group" role="group" aria-label="...">
+                            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></button>
+                            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="cw-field-label col-xs-2 control-label">
+                        <span class="pull-left">Complex Paging</span>
+                    </label>
+                    <div class="col-xs-10">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </button>
+                            <button type="button" class="btn btn-default">
+                                1-10 of 512 <span class="caret dropdown-icon" />
+                            </button>
+                            <button type="button" class="btn btn-default">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="cw-field-label col-xs-2 control-label">
+                        <span class="pull-left">Segmented</span>
+                    </label>
+                    <div class="col-xs-10">
+                        <div class="btn-group cw-segmented-control">
+                            <label class="btn btn-default" ng-model="main.radioModel" uib-btn-radio="'Day'">Day</label>
+                            <label class="btn btn-default" ng-model="main.radioModel" uib-btn-radio="'Week'">Week</label>
+                            <label class="btn btn-default" ng-model="main.radioModel" uib-btn-radio="'Next 7'">Next 7</label>
+                            <label class="btn btn-default" ng-model="main.radioModel" uib-btn-radio="'Month'">Month</label>
+                            <label class="btn btn-default" ng-model="main.radioModel" uib-btn-radio="'Agenda'">Agenda</label>
+                        </div>
+                    </div>
+                </div>
+
+            </ng-form>
+
+        </div>
+    </div>
+
+
 
 
 </div>

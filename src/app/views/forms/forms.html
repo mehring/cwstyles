@@ -8,68 +8,93 @@
         Forms
     </div>
 
-    <h3 class="style-section">Forms</h3>
+    <h3 class="style-section">Horizontal Form</h3>
 
-    <table class="table table-bordered">
-        <tbody>
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6">
+            <ng-form class="form-horizontal cw-form" name="inlineFormExample">
 
-        <tr>
-            <td style="width: 200px;">Input Field</td>
-            <td>
-                <form class="form-inline">
-                    <div class="form-group">
-                        <label class="cw-field-label">
-                            Label:
-                        </label>
-                        <input type="text"
-                               class="cw-text-field" />
+                <div class="form-group">
+                    <label class="cw-field-label col-xs-2 control-label">
+                        <span class="pull-left">Text Field:</span>
+                    </label>
+                    <div class="col-xs-10 control-value">
+                        <input type="text" class="cw-text-field" />
                     </div>
-                </form>
-            </td>
-        </tr>
-
-        <tr>
-            <td>Dropdown</td>
-            <td>
-                <form class="form-inline">
-                    <div class="form-group">
-                        <label class="cw-field-label">
-                            Label:
-                        </label>
-                        <div class="btn-group nudge-right"
-                             uib-dropdown>
-                            <button type="button"
-                                    class="cw-dropdown-field"
-                                    uib-dropdown-toggle>
-                                <span class="caret dropdown-icon pull-right" />
-                            </button>
-                            <ul class="dropdown-menu"
-                                uib-dropdown-menu>
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </form>
-            </td>
-        </tr>
-
-        <tr>
-            <td>Textarea</td>
-            <td>
-                <label class="cw-field-label">
-                    Label:
-                </label>
-                <div class="btn-group nudge-right">
-                    <textarea class="form-control" style="min-width: 300px;"></textarea>
                 </div>
-            </td>
-        </tr>
 
-        </tbody>
-    </table>
+                <div class="form-group">
+                    <label class="cw-field-label col-xs-2 control-label">
+                        <span class="pull-left">Required:</span>
+                        <span class="glyphicon glyphicon-asterisk cw-required-indicator"></span>
+                    </label>
+                    <div class="col-xs-10 control-value">
+                        <input type="text" class="cw-text-field" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="cw-field-label col-xs-2 control-label">
+                        <span class="pull-left">Dropdown:</span>
+                    </label>
+                    <div class="col-xs-10 control-value">
+                        <select class="cw-dropdown-field">
+                            <option></option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="cw-field-label col-xs-2 control-label">
+                        <span class="pull-left">Invalid:</span>
+                        <span class="glyphicon glyphicon-asterisk cw-required-indicator"></span>
+                    </label>
+                    <div class="col-xs-10 control-value">
+                        <select class="cw-dropdown-field ng-invalid">
+                            <option>(select one)</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="cw-field-label col-xs-2 control-label">
+                        <span class="pull-left">Disabled:</span>
+                        <span class="glyphicon glyphicon-asterisk cw-required-indicator"></span>
+                    </label>
+                    <div class="col-xs-10 control-value">
+                        <select class="cw-dropdown-field" disabled>
+                            <option>(disabled)</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="cw-field-label col-xs-2 control-label">
+                        <span class="pull-left">Text Area:</span>
+                    </label>
+                    <div class="col-xs-10 control-value">
+                        <textarea class="form-control" style="width: 100%;"></textarea>
+                    </div>
+                </div>
+
+            </ng-form>
+        </div>
+
+    </div>
 
 </div>
