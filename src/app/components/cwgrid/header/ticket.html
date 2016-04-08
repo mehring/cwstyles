@@ -4,10 +4,10 @@
 
     <div class="header-cell-label hover-pointer"
          style="text-align: right;"
-         ng-click="grid.appScope.changeSorting(col.displayName)">
+         ng-click="grid.appScope.main.changeSorting(col.displayName)">
         {{ col.displayName }} #
-        <span ng-if="grid.appScope.filters.sort.column == 'Ticket'"
-              ng-class="{'caret': true, 'rotate-180': !grid.appScope.filters.sort.descending }"></span>
+        <span ng-if="grid.appScope.main.filters.sort.column == 'Ticket'"
+              ng-class="{'caret': true, 'rotate-180': !grid.appScope.main.filters.sort.descending }"></span>
     </div>
 
     <input type="text"

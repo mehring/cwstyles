@@ -19,8 +19,10 @@
     return directive;
 
     /** @ngInject */
-    function TitlebarController($window) {
+    function TitlebarController($window, $rootScope) {
       var vm = this;
+
+        vm.currentState = $rootScope.$state.current.name;
 
         vm.syncTopPosition = function() {
             angular.element('.titlebar').css('top', angular.element($window).scrollTop() + 'px');

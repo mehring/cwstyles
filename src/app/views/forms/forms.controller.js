@@ -3,11 +3,10 @@
 
     angular
         .module('cwstyles')
-        .controller('MainController', MainController);
+        .controller('FormsController', FormsController);
 
-    function MainController() {
+    function FormsController() {
         //var vm = this;
-
 
 
     }

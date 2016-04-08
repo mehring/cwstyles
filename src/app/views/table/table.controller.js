@@ -3,11 +3,10 @@
 
     angular
         .module('cwstyles')
-        .controller('MainController', MainController);
+        .controller('TableController', TableController);
 
-    function MainController() {
+    function TableController() {
         //var vm = this;
-
 
 
     }

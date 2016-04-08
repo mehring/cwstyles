@@ -5,6 +5,26 @@
         ConnectWise Styles
     </span>
 
+    <a href="#/buttons"
+       ng-class="{'titlebar-link':true, 'active': vm.currentState.includes('buttons')}">
+        Buttons
+    </a>
+
+    <a href="#/forms"
+       ng-class="{'titlebar-link':true, 'active': vm.currentState.includes('forms')}">
+        Forms
+    </a>
+
+    <a href="#/grid"
+       ng-class="{'titlebar-link':true, 'active': vm.currentState.includes('grid')}">
+        Grid
+    </a>
+
+    <a href="#/table"
+       ng-class="{'titlebar-link':true, 'active': vm.currentState.includes('table')}">
+        Table
+    </a>
+
     <!--<span uib-dropdown dropdown-append-to-body>
       <a href id="simple-dropdown"
          class="btn btn-link titlebar-link"

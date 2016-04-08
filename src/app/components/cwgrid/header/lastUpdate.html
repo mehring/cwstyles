@@ -3,10 +3,10 @@
                  'cwgrid-header-cell': true }">
 
     <div class="header-cell-label hover-pointer"
-         ng-click="grid.appScope.changeSorting(col.displayName)">
+         ng-click="grid.appScope.main.changeSorting(col.displayName)">
         {{ col.displayName }}
-        <span ng-if="grid.appScope.filters.sort.column == 'Last Update'"
-              ng-class="{'caret': true, 'rotate-180': !grid.appScope.filters.sort.descending }"></span>
+        <span ng-if="grid.appScope.main.filters.sort.column == 'Last Update'"
+              ng-class="{'caret': true, 'rotate-180': !grid.appScope.main.filters.sort.descending }"></span>
     </div>
 
     <input type="text"
