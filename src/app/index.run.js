@@ -6,8 +6,12 @@
         .run(runBlock);
 
     /** @ngInject */
-    function runBlock($rootScope, $state, $stateParams, $log) {
+    function runBlock($rootScope,
+                      $state,
+                      $stateParams,
+                      $log) {
 
+        //expose the $state and $stateParams services
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
 

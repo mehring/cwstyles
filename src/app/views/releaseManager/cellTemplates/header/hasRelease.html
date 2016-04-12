@@ -1,0 +1,20 @@
+<div ng-class="{ 'sortable': sortable,
+                 'header-cell': true,
+                 'cwgrid-header-cell': true }">
+
+    <div class="header-cell-label hover-pointer"
+         style="text-align: left;"
+         ng-click="grid.appScope.main.changeSorting(col.displayName)">
+        Has Release
+        <span ng-if="grid.appScope.main.filters.sort.column == 'Has Release'"
+              ng-class="{'caret': true, 'rotate-180': !grid.appScope.main.filters.sort.descending }"></span>
+    </div>
+
+    <select class="cw-dropdown-field cwgrid-header-text-field"
+            ng-model="grid.appScope.main.filters.HasRelease">
+        <option></option>
+        <option>yes</option>
+        <option>no</option>
+    </select>
+
+</div>

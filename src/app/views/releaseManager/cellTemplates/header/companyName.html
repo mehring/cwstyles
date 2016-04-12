@@ -1,0 +1,17 @@
+<div ng-class="{ 'sortable': sortable,
+                 'header-cell': true,
+                 'cwgrid-header-cell': true }">
+
+    <div class="header-cell-label hover-pointer"
+         style="text-align: left;"
+         ng-click="grid.appScope.main.changeSorting(col.displayName)">
+        {{ col.displayName }}
+        <span ng-if="grid.appScope.main.filters.sort.column == 'Company Name'"
+              ng-class="{'caret': true, 'rotate-180': !grid.appScope.main.filters.sort.descending }"></span>
+    </div>
+
+    <input type="text"
+           class="cw-text-field cwgrid-header-text-field"
+           ng-model="grid.appScope.main.filters.CompanyName" />
+
+</div>

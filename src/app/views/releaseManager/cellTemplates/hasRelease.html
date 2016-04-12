@@ -1,0 +1,11 @@
+<div ng-class="{
+        'ui-grid-cell-contents':true,
+        'ui-grid-row-hover': grid.appScope.main.hoveredRow == row.entity.id &&
+                            !grid.appScope.main.rowIDSelected(row.entity.id)
+        }"
+     ng-mouseenter="grid.appScope.main.setHoveredRow(row.entity.id)"
+     ng-mouseleave="grid.appScope.main.setHoveredRow(-1)"
+     style="text-align: center;">
+    <span ng-if="COL_FIELD == 'yes'" class="glyphicon glyphicon-ok color-positive"></span>
+    <span ng-if="COL_FIELD == 'no'" class="glyphicon glyphicon-remove color-negative"></span>
+</div>

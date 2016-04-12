@@ -1,10 +1,10 @@
 <style type="text/css">
     .grid {
-        height: 600px;
+        height: 500px;
     }
 </style>
 
-<titlebar />
+<titlebar></titlebar>
 
 <div class="body-content padded">
 
@@ -29,26 +29,9 @@
 
             <div class="vertical-rule"></div>
 
-            <!--<span class="pull-left">
-                <form class="form-inline">
-                    <strong>Send Release:</strong>
-                    <div class="form-group">
-                        <input id="sendReleaseNow" type="radio" checked />
-                        <label for="sendReleaseNow" style="font-weight: normal">
-                            Now
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <input id="sendReleaseOnDate" type="radio" />
-                        <label for="sendReleaseOnDate" style="font-weight: normal">
-                            On Date:
-                        </label>
-                        <input type="text"
-                               class="cw-text-field"
-                               style="display: inline-block; width: 150px; margin-right: 8px;" />
-                    </div>
-                </form>
-            </span>-->
+            <a class="btn btn-default btn-icon">
+                <span class="btn-icon-text">Reset Filters</span>
+            </a>
 
             <a class="btn btn-default positive-action btn-icon">
                 <span class="glyphicon glyphicon-send"></span>
@@ -67,6 +50,5 @@
          ui-grid-selection
          ui-grid-pinning
          class="grid"></div>
-
 
 </div>

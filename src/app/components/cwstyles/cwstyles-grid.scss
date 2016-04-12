@@ -6,12 +6,12 @@
   background-color: #F6F6F6;
 }
 
-.ui-grid-row:hover .ui-grid-cell {
+.ui-grid-row-hover {
   background-color: #FFEED5;
 }
 
 .ui-grid-row.ui-grid-row-selected > [ui-grid-row] > .ui-grid-cell {
-  background-color: #FFDCA8;
+  background-color: #FFDCA8 !important;
 }
 
 .cwgrid-header-cell {

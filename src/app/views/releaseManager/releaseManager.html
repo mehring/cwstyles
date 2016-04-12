@@ -1,4 +1,4 @@
-<titlebar />
+<titlebar></titlebar>
 
 <div class="body-content padded">
 
@@ -8,150 +8,159 @@
         Release Manager
     </div>
 
-    <div class="cwtoolbar">
+    <uib-tabset class="cwtabs" style="margin-top: 20px;">
 
-        <span class="pull-left">
+        <uib-tab>
+            <uib-tab-heading>Core Releases</uib-tab-heading>
+            <div class="cwtoolbar">
 
-            <a class="btn btn-default btn-icon">
-                <span class="glyphicon glyphicon-plus"></span>
-                <span class="btn-icon-text">Add Release</span>
-            </a>
+                <span class="pull-left">
+                    <a class="btn btn-default btn-icon">
+                        <span class="glyphicon glyphicon-plus"></span>
+                        <span class="btn-icon-text">Add Release</span>
+                    </a>
+                </span>
 
-        </span>
+                <div class="clearfix"></div>
 
-        <div class="clearfix"></div>
+            </div>
+            <table class="table table-striped table-hover cwtable">
+                <thead>
+                <tr>
+                    <th class="center-align" style="width: 70px;">
+                        Enabled
+                    </th>
+                    <th>
+                        Release Name
+                    </th>
+                    <th>
+                        Agent Version
+                    </th>
+                    <th class="center-align" style="width: 180px;">
+                        Actions
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="center-align action-button-cell">
+                        <a class="btn btn-default btn-icon">
+                            <span class="glyphicon glyphicon-ok color-positive"></span>
+                        </a>
+                    </td>
+                    <td>
+                        <a href class="table-link">LabTech 10.5</a>
+                    </td>
+                    <td>
+                        105.226
+                    </td>
+                    <td class="center-align action-button-cell">
+                        <a class="btn btn-default positive-action btn-icon"
+                           href="#/release-manager-send"
+                           uib-tooltip="Send Release">
+                            <span class="glyphicon glyphicon-send"></span>
+                        </a>
+                        <a class="btn btn-default btn-icon"
+                           uib-tooltip="Copy">
+                            <span class="glyphicon glyphicon-duplicate"></span>
+                        </a>
+                        <a class="btn btn-default negative-action btn-icon"
+                           uib-tooltip="Delete">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="center-align action-button-cell">
+                        <a class="btn btn-default btn-icon">
+                            <span class="glyphicon glyphicon-remove color-negative"></span>
+                        </a>
+                    </td>
+                    <td>
+                        <a href class="table-link">LabTech 10.5 (copy)</a>
+                    </td>
+                    <td>
+                        105.226
+                    </td>
+                    <td class="center-align action-button-cell">
+                        <a class="btn btn-default positive-action btn-icon"
+                           uib-tooltip="Send Release">
+                            <span class="glyphicon glyphicon-send"></span>
+                        </a>
+                        <a class="btn btn-default btn-icon"
+                           uib-tooltip="Copy">
+                            <span class="glyphicon glyphicon-duplicate"></span>
+                        </a>
+                        <a class="btn btn-default negative-action btn-icon"
+                           uib-tooltip="Delete">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="center-align action-button-cell">
+                        <a class="btn btn-default btn-icon">
+                            <span class="glyphicon glyphicon-ok color-positive"></span>
+                        </a>
+                    </td>
+                    <td>
+                        <a href class="table-link">LabTech 10</a>
+                    </td>
+                    <td>
+                        100.332
+                    </td>
+                    <td class="center-align action-button-cell">
+                        <a class="btn btn-default positive-action btn-icon"
+                           uib-tooltip="Send Release">
+                            <span class="glyphicon glyphicon-send"></span>
+                        </a>
+                        <a class="btn btn-default btn-icon"
+                           uib-tooltip="Copy">
+                            <span class="glyphicon glyphicon-duplicate"></span>
+                        </a>
+                        <a class="btn btn-default negative-action btn-icon"
+                           uib-tooltip="Delete">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="center-align action-button-cell">
+                        <a class="btn btn-default btn-icon">
+                            <span class="glyphicon glyphicon-ok color-positive"></span>
+                        </a>
+                    </td>
+                    <td>
+                        <a href class="table-link">LabTech 2013</a>
+                    </td>
+                    <td>
+                        60.170
+                    </td>
+                    <td class="center-align action-button-cell">
+                        <a class="btn btn-default positive-action btn-icon"
+                           uib-tooltip="Send Release">
+                            <span class="glyphicon glyphicon-send"></span>
+                        </a>
+                        <a class="btn btn-default btn-icon"
+                           uib-tooltip="Copy">
+                            <span class="glyphicon glyphicon-duplicate"></span>
+                        </a>
+                        <a class="btn btn-default negative-action btn-icon"
+                           uib-tooltip="Delete">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </uib-tab>
 
-    </div>
+        <uib-tab>
+            <uib-tab-heading>Other Releases</uib-tab-heading>
+            <!--nothing to see here-->
+        </uib-tab>
 
-    <table class="table table-striped table-hover cwtable">
-        <thead>
-        <tr>
-            <th class="center-align" style="width: 70px;">
-                Enabled
-            </th>
-            <th>
-                Release Name
-            </th>
-            <th>
-                Agent Version
-            </th>
-            <th class="center-align" style="width: 180px;">
-                Actions
-            </th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td class="center-align action-button-cell">
-                <a class="btn btn-default btn-icon">
-                    <span class="glyphicon glyphicon-ok color-positive"></span>
-                </a>
-            </td>
-            <td>
-                <a href class="table-link">LabTech 10.5</a>
-            </td>
-            <td>
-                105.226
-            </td>
-            <td class="center-align action-button-cell">
-                <a class="btn btn-default positive-action btn-icon"
-                   href="#/release-manager-send"
-                   uib-tooltip="Send Release">
-                    <span class="glyphicon glyphicon-send"></span>
-                </a>
-                <a class="btn btn-default btn-icon"
-                   uib-tooltip="Copy">
-                    <span class="glyphicon glyphicon-duplicate"></span>
-                </a>
-                <a class="btn btn-default negative-action btn-icon"
-                   uib-tooltip="Delete">
-                    <span class="glyphicon glyphicon-trash"></span>
-                </a>
-            </td>
-        </tr>
-        <tr>
-            <td class="center-align action-button-cell">
-                <a class="btn btn-default btn-icon">
-                    <span class="glyphicon glyphicon-remove color-negative"></span>
-                </a>
-            </td>
-            <td>
-                <a href class="table-link">LabTech 10.5 (copy)</a>
-            </td>
-            <td>
-                105.226
-            </td>
-            <td class="center-align action-button-cell">
-                <a class="btn btn-default positive-action btn-icon"
-                   uib-tooltip="Send Release">
-                    <span class="glyphicon glyphicon-send"></span>
-                </a>
-                <a class="btn btn-default btn-icon"
-                   uib-tooltip="Copy">
-                    <span class="glyphicon glyphicon-duplicate"></span>
-                </a>
-                <a class="btn btn-default negative-action btn-icon"
-                   uib-tooltip="Delete">
-                    <span class="glyphicon glyphicon-trash"></span>
-                </a>
-            </td>
-        </tr>
-        <tr>
-            <td class="center-align action-button-cell">
-                <a class="btn btn-default btn-icon">
-                    <span class="glyphicon glyphicon-ok color-positive"></span>
-                </a>
-            </td>
-            <td>
-                <a href class="table-link">LabTech 10</a>
-            </td>
-            <td>
-                100.332
-            </td>
-            <td class="center-align action-button-cell">
-                <a class="btn btn-default positive-action btn-icon"
-                   uib-tooltip="Send Release">
-                    <span class="glyphicon glyphicon-send"></span>
-                </a>
-                <a class="btn btn-default btn-icon"
-                   uib-tooltip="Copy">
-                    <span class="glyphicon glyphicon-duplicate"></span>
-                </a>
-                <a class="btn btn-default negative-action btn-icon"
-                   uib-tooltip="Delete">
-                    <span class="glyphicon glyphicon-trash"></span>
-                </a>
-            </td>
-        </tr>
-        <tr>
-            <td class="center-align action-button-cell">
-                <a class="btn btn-default btn-icon">
-                    <span class="glyphicon glyphicon-ok color-positive"></span>
-                </a>
-            </td>
-            <td>
-                <a href class="table-link">LabTech 2013</a>
-            </td>
-            <td>
-                60.170
-            </td>
-            <td class="center-align action-button-cell">
-                <a class="btn btn-default positive-action btn-icon"
-                   uib-tooltip="Send Release">
-                    <span class="glyphicon glyphicon-send"></span>
-                </a>
-                <a class="btn btn-default btn-icon"
-                   uib-tooltip="Copy">
-                    <span class="glyphicon glyphicon-duplicate"></span>
-                </a>
-                <a class="btn btn-default negative-action btn-icon"
-                   uib-tooltip="Delete">
-                    <span class="glyphicon glyphicon-trash"></span>
-                </a>
-            </td>
-        </tr>
-        </tbody>
-    </table>
+    </uib-tabset>
 
 
 </div>

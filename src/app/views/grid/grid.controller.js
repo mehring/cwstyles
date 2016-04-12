@@ -5,7 +5,7 @@
         .module('cwstyles')
         .controller('GridController', GridController);
 
-    function GridController() {
+    function GridController($templateCache) {
         var vm = this;
 
         vm.uiGridData = [];
@@ -49,81 +49,81 @@
                 {
                     name: 'Ticket',
                     width: 80,
-                    cellTemplate: './app/views/grid/cellTemplates/ticket.html',
-                    headerCellTemplate: './app/views/grid/cellTemplates/header/ticket.html'
+                    cellTemplate: $templateCache.get('app/views/grid/cellTemplates/ticket.html'),
+                    headerCellTemplate: $templateCache.get('app/views/grid/cellTemplates/header/ticket.html')
                 },
                 {
                     name: 'Priority',
                     width: 80,
-                    cellTemplate: './app/views/grid/cellTemplates/priority.html',
-                    headerCellTemplate: './app/views/grid/cellTemplates/header/priority.html'
+                    cellTemplate: $templateCache.get('app/views/grid/cellTemplates/priority.html'),
+                    headercellTemplate: $templateCache.get('app/views/grid/cellTemplates/header/priority.html')
                 },
                 {
                     name: 'Age',
                     minWidth: 70,
-                    cellTemplate: './app/views/grid/cellTemplates/age.html',
-                    headerCellTemplate: './app/views/grid/cellTemplates/header/age.html'
+                    cellTemplate: $templateCache.get('app/views/grid/cellTemplates/age.html'),
+                    headercellTemplate: $templateCache.get('app/views/grid/cellTemplates/header/age.html')
                 },
                 {
                     name: 'SummaryDescription',
                     minWidth: 300,
-                    cellTemplate: './app/views/grid/cellTemplates/summaryDescription.html',
-                    headerCellTemplate: './app/views/grid/cellTemplates/header/summaryDescription.html'
+                    cellTemplate: $templateCache.get('app/views/grid/cellTemplates/summaryDescription.html'),
+                    headerCellTemplate: $templateCache.get('app/views/grid/cellTemplates/header/summaryDescription.html')
                 },
                 {
                     name: 'Status',
                     minWidth: 120,
-                    headerCellTemplate: './app/views/grid/cellTemplates/header/status.html'
+                    headercellTemplate: $templateCache.get('app/views/grid/cellTemplates/header/status.html')
                 },
                 {
                     name: 'Company',
                     minWidth: 120,
-                    headerCellTemplate: './app/views/grid/cellTemplates/header/company.html'
+                    headercellTemplate: $templateCache.get('app/views/grid/cellTemplates/header/company.html')
                 },
                 {
                     name: 'Resources',
                     minWidth: 120,
-                    headerCellTemplate: './app/views/grid/cellTemplates/header/resources.html'
+                    headercellTemplate: $templateCache.get('app/views/grid/cellTemplates/header/resources.html')
                 },
                 {
                     name: 'TotalHours',
                     minWidth: 120,
-                    headerCellTemplate: './app/views/grid/cellTemplates/header/totalHours.html'
+                    headercellTemplate: $templateCache.get('app/views/grid/cellTemplates/header/totalHours.html')
                 },
                 {
                     name: 'Budget',
                     minWidth: 120,
-                    headerCellTemplate: './app/views/grid/cellTemplates/header/budget.html'
+                    headercellTemplate: $templateCache.get('app/views/grid/cellTemplates/header/budget.html')
                 },
                 {
                     name: 'Contact',
                     minWidth: 120,
-                    headerCellTemplate: './app/views/grid/cellTemplates/header/contact.html'
+                    headercellTemplate: $templateCache.get('app/views/grid/cellTemplates/header/contact.html')
                 },
                 {
                     name: 'Type',
                     minWidth: 120,
-                    headerCellTemplate: './app/views/grid/cellTemplates/header/type.html'
+                    headercellTemplate: $templateCache.get('app/views/grid/cellTemplates/header/type.html')
                 },
                 {
                     name: 'Subtype',
                     minWidth: 120,
-                    headerCellTemplate: './app/views/grid/cellTemplates/header/subtype.html'
+                    headercellTemplate: $templateCache.get('app/views/grid/cellTemplates/header/subtype.html')
                 },
                 {
                     name: 'Team',
                     minWidth: 120,
-                    headerCellTemplate: './app/views/grid/cellTemplates/header/team.html'
+                    headercellTemplate: $templateCache.get('app/views/grid/cellTemplates/header/team.html')
                 },
                 {
                     name: 'LastUpdate',
                     minWidth: 240,
-                    headerCellTemplate: './app/views/grid/cellTemplates/header/lastUpdate.html'
+                    headercellTemplate: $templateCache.get('app/views/grid/cellTemplates/header/lastUpdate.html')
                 },
                 {
                     name: 'Entered',
                     minWidth: 120,
-                    headerCellTemplate: './app/views/grid/cellTemplates/header/entered.html'
+                    headercellTemplate: $templateCache.get('app/views/grid/cellTemplates/header/entered.html')
                 }
 
             ];
