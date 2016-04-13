@@ -10,6 +10,10 @@
   background-color: #FFEED5;
 }
 
+.ui-grid-row-selected {
+  background-color: #FFDCA8;
+}
+
 .ui-grid-row.ui-grid-row-selected > [ui-grid-row] > .ui-grid-cell {
   background-color: #FFDCA8 !important;
 }
@@ -30,4 +34,8 @@
   min-width: 0;
   width: 100%;
   margin: 6px 0 0 0;
+}
+
+.cw-selection-checkbox {
+  margin: 0 !important;
 }

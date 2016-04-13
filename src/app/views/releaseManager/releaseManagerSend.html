@@ -13,9 +13,9 @@
         <span class="glyphicon glyphicon-menu-right"></span>
         <a href="#/release-manager">Release Manager</a>
         <span class="glyphicon glyphicon-menu-right"></span>
-        Send Release
-        <span class="glyphicon glyphicon-menu-right"></span>
         LabTech 10.5
+        <span class="glyphicon glyphicon-menu-right"></span>
+        Send Release
     </div>
 
     <div class="cwtoolbar">
@@ -33,7 +33,23 @@
                 <span class="btn-icon-text">Reset Filters</span>
             </a>
 
-            <a class="btn btn-default positive-action btn-icon">
+            <div class="btn-group pull-left"
+                 uib-dropdown
+                 dropdown-append-to-body>
+                <button type="button"
+                        class="btn btn-default"
+                        uib-dropdown-toggle>
+                    Row Actions
+                    <span class="caret dropdown-icon" />
+                </button>
+                <ul class="dropdown-menu"
+                    uib-dropdown-menu>
+                    <li><a href="#">Unschedule Release</a></li>
+                </ul>
+            </div>
+
+            <a class="btn btn-default positive-action btn-icon"
+               ng-click="main.sayRows()">
                 <span class="glyphicon glyphicon-send"></span>
                 <span class="btn-icon-text">Send Release</span>
             </a>
@@ -47,7 +63,6 @@
     <div ui-grid="main.uiGridOptions"
          ui-grid-resize-columns
          ui-grid-auto-resize
-         ui-grid-selection
          ui-grid-pinning
          class="grid"></div>
 

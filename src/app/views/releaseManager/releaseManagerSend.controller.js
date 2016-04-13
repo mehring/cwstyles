@@ -5,14 +5,13 @@
         .module('cwstyles')
         .controller('ReleaseManagerSendController', ReleaseManagerSendController);
 
-    function ReleaseManagerSendController($templateCache) {
+    function ReleaseManagerSendController($scope, $templateCache) {
         var vm = this;
-
-        $templateCache.put('ui-grid/selectionRowHeaderButtons', $templateCache.get('app/views/releaseManager/cellTemplates/selectionRowHeader.html'));
 
         vm.hoveredRow = -1;
         vm.uiGridData = [];
         vm.gridApi;
+        vm.selectAllRows = false;
         vm.filters = {
 
             sort: {
@@ -28,7 +27,9 @@
             State: '',
             Status: '',
             Territory: '',
-            Type: ''
+            Type: '',
+            KnownIssues: '',
+
 
         }
 
@@ -46,9 +47,13 @@
 
         vm.rowIDSelected = function(id) {
             var returnValue = false;
-            var selectedRows = vm.gridApi.selection.getSelectedRows();
-            angular.forEach(selectedRows, function(row) {
-                if (row.id == id) { returnValue = true; }
+            var rows = vm.gridApi.core.getVisibleRows();
+            angular.forEach(rows, function(row) {
+                if (row.entity.id == id) {
+                    if (row.entity.checked) {
+                        returnValue = true;
+                    }
+                }
             });
             return returnValue;
         }
@@ -73,6 +78,13 @@
         vm.getUIGridColumnDefs = function() {
             var prefix = 'app/views/releaseManager/cellTemplates/';
             var columnDefs = [
+                {
+                    name: 'selection',
+                    width: 30,
+                    cellTemplate: vm.getColumnDefTemplate(prefix, 'selection.html', false),
+                    headerCellTemplate: vm.getColumnDefTemplate(prefix, 'selection.html', true),
+                    pinnedLeft: true
+                },
                 {
                     name: 'CompanyName',
                     minWidth: 300,
@@ -125,10 +137,10 @@
                     headerCellTemplate: vm.getColumnDefTemplate(prefix, 'state.html', true)
                 },
                 {
-                    name: 'MarketingGroup',
+                    name: 'KnownIssues',
                     minWidth: 150,
-                    cellTemplate: vm.getColumnDefTemplate(prefix, 'marketingGroup.html', false),
-                    headerCellTemplate: vm.getColumnDefTemplate(prefix, 'marketingGroup.html', true)
+                    cellTemplate: vm.getColumnDefTemplate(prefix, 'knownIssues.html', false),
+                    headerCellTemplate: vm.getColumnDefTemplate(prefix, 'knownIssues.html', true)
                 }
 
             ];
@@ -158,6 +170,7 @@
             vm.uiGridData = [
                 {
                     id: 0,
+                    checked: false,
                     CompanyName: 'Example Company 0',
                     HasRelease: 'yes',
                     Eligible: 'yes',
@@ -170,6 +183,7 @@
                 },
                 {
                     id: 1,
+                    checked: false,
                     CompanyName: 'Example Company 1',
                     HasRelease: 'yes',
                     Eligible: 'yes',
@@ -182,6 +196,7 @@
                 },
                 {
                     id: 2,
+                    checked: false,
                     CompanyName: 'Example Company 2',
                     HasRelease: 'yes',
                     Eligible: 'yes',
@@ -194,6 +209,7 @@
                 },
                 {
                     id: 3,
+                    checked: false,
                     CompanyName: 'Example Company 3',
                     HasRelease: 'no',
                     Eligible: 'no',
@@ -206,6 +222,7 @@
                 },
                 {
                     id: 4,
+                    checked: false,
                     CompanyName: 'Example Company 4',
                     HasRelease: 'no',
                     Eligible: 'yes',
@@ -218,6 +235,7 @@
                 },
                 {
                     id: 5,
+                    checked: false,
                     CompanyName: 'Example Company 5',
                     HasRelease: 'no',
                     Eligible: 'yes',
@@ -230,6 +248,7 @@
                 },
                 {
                     id: 6,
+                    checked: false,
                     CompanyName: 'Example Company 6',
                     HasRelease: 'no',
                     Eligible: 'yes',
@@ -242,6 +261,7 @@
                 },
                 {
                     id: 7,
+                    checked: false,
                     CompanyName: 'Example Company 7',
                     HasRelease: 'yes',
                     Eligible: 'yes',
@@ -254,6 +274,7 @@
                 },
                 {
                     id: 8,
+                    checked: false,
                     CompanyName: 'Example Company 8',
                     HasRelease: 'no',
                     Eligible: 'yes',
@@ -266,6 +287,7 @@
                 },
                 {
                     id: 9,
+                    checked: false,
                     CompanyName: 'Example Company 9',
                     HasRelease: 'yes',
                     Eligible: 'yes',
@@ -278,6 +300,7 @@
                 },
                 {
                     id: 10,
+                    checked: false,
                     CompanyName: 'Example Company 10',
                     HasRelease: 'no',
                     Eligible: 'yes',
@@ -290,6 +313,7 @@
                 },
                 {
                     id: 11,
+                    checked: false,
                     CompanyName: 'Example Company 11',
                     HasRelease: 'yes',
                     Eligible: 'yes',
@@ -302,6 +326,7 @@
                 },
                 {
                     id: 12,
+                    checked: false,
                     CompanyName: 'Example Company 12',
                     HasRelease: 'yes',
                     Eligible: 'yes',
@@ -314,6 +339,7 @@
                 },
                 {
                     id: 13,
+                    checked: false,
                     CompanyName: 'Example Company 13',
                     HasRelease: 'yes',
                     Eligible: 'yes',
@@ -326,6 +352,7 @@
                 },
                 {
                     id: 14,
+                    checked: false,
                     CompanyName: 'Example Company 14',
                     HasRelease: 'yes',
                     Eligible: 'yes',
@@ -340,6 +367,16 @@
             vm.setUIGrid();
         }
         vm.drawGrid();
+
+        //select / deselect all rows
+        $scope.$watch(angular.bind(vm, function() {
+            return vm.selectAllRows;
+        }), function(newValue) {
+            var rows = vm.gridApi.core.getVisibleRows();
+            angular.forEach(rows, function(row) {
+                row.entity.checked = newValue;
+            });
+        });
 
     }
 

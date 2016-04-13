@@ -10,33 +10,10 @@
               ng-class="{'caret': true, 'rotate-180': !grid.appScope.main.filters.sort.descending }"></span>
     </div>
 
-    <div class="btn-group cwgrid-header-dropdown"
-         uib-dropdown dropdown-append-to-body>
-        <button type="button"
-                class="cw-dropdown-field cwgrid-header-text-field"
-                uib-dropdown-toggle>
-            <span class="caret dropdown-icon pull-right" />
-        </button>
-        <ul class="dropdown-menu"
-            uib-dropdown-menu>
-            <li><a href="#">
-                <span class="priority priority-red" /> Priority 1 (red)
-            </a></li>
-            <li><a href="#">
-                <span class="priority priority-orange" /> Priority 2 (orange)
-            </a></li>
-            <li><a href="#">
-                <span class="priority priority-yellow" /> Priority 3 (yellow)
-            </a></li>
-            <li><a href="#">
-                <span class="priority priority-blue" /> Priority 4 (blue)
-            </a></li>
-            <li><a href="#">
-                <span class="priority priority-green" /> Priority 5 (green)
-            </a></li>
-            <li><a href="#">
-                <span class="priority priority-white" /> Normal (white)
-            </a></li>
-        </ul>
-    </div>
+    <select class="cw-dropdown-field cwgrid-header-text-field">
+        <option></option>
+        <option>yes</option>
+        <option>no</option>
+    </select>
+
 </div>

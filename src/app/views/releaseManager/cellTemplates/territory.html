@@ -1,5 +1,6 @@
 <div ng-class="{
         'ui-grid-cell-contents':true,
+        'ui-grid-row-selected': grid.appScope.main.rowIDSelected(row.entity.id),
         'ui-grid-row-hover': grid.appScope.main.hoveredRow == row.entity.id &&
                             !grid.appScope.main.rowIDSelected(row.entity.id)
         }"
