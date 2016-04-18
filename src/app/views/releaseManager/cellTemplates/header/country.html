@@ -5,13 +5,13 @@
     <div class="header-cell-label hover-pointer"
          style="text-align: left;"
          ng-click="grid.appScope.main.changeSorting(col.displayName)">
-        State / Province
-        <span ng-if="grid.appScope.main.filters.sort.column == 'State'"
+        {{ col.displayName }}
+        <span ng-if="grid.appScope.main.filters.sort.column == 'Country'"
               ng-class="{'caret': true, 'rotate-180': !grid.appScope.main.filters.sort.descending }"></span>
     </div>
 
     <select class="cw-dropdown-field cwgrid-header-text-field"
-            ng-model="grid.appScope.main.filters.State">
+            ng-model="grid.appScope.main.filters.Country">
         <option></option>
         <option>yes</option>
         <option>no</option>

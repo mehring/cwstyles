@@ -32,6 +32,12 @@
                 controller: 'MainController',
                 controllerAs: 'main'
             })
+            .state('modals', {
+                url: '/modals',
+                templateUrl: 'app/views/modals/modals.html',
+                controller: 'ModalsController',
+                controllerAs: 'main'
+            })
             .state('release-manager', {
                 url: '/release-manager',
                 templateUrl: 'app/views/releaseManager/releaseManager.html',

@@ -1,0 +1,168 @@
+<div class="modal-header">
+    <button type="button"
+            class="close"
+            ng-click="main.ok()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <h3 class="modal-title">Manage Release - LabTech 10.5</h3>
+</div>
+<div class="modal-body">
+
+
+    <uib-tabset class="cwtabs">
+
+        <uib-tab>
+            <uib-tab-heading>General</uib-tab-heading>
+            <ng-form class="form-horizontal cw-form padded" name="modifyReleaseForm">
+
+                <div class="form-group">
+                    <label class="cw-field-label col-xs-3 control-label">
+                        <span class="pull-left">Release Name:</span>
+                    </label>
+                    <div class="col-xs-9 control-value">
+                        <input type="text" class="cw-text-field" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="cw-field-label col-xs-3 control-label">
+                        <span class="pull-left">Agent Version:</span>
+                    </label>
+                    <div class="col-xs-4 control-value">
+                        <input type="text" class="cw-text-field" />
+                    </div>
+                    <div class="col-xs-1 control-value" style="text-align: center;">
+                        to
+                    </div>
+                    <div class="col-xs-4 control-value">
+                        <input type="text" class="cw-text-field" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="cw-field-label col-xs-3 control-label">
+                        <span class="pull-left">Marketing Group:</span>
+                    </label>
+                    <div class="col-xs-9 control-value">
+                        <input type="text" class="cw-text-field" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="cw-field-label col-xs-3 control-label">
+                        <span class="pull-left">Download URL:</span>
+                    </label>
+                    <div class="col-xs-9 control-value">
+                        <input type="text" class="cw-text-field" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="cw-field-label col-xs-3 control-label">
+                        <span class="pull-left">Prerequisite:</span>
+                    </label>
+                    <div class="col-xs-9 control-value">
+                        <select class="cw-dropdown-field">
+                            <option></option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                </div>
+
+            </ng-form>
+        </uib-tab>
+
+        <uib-tab>
+            <uib-tab-heading>Modal</uib-tab-heading>
+            <ng-form class="form-horizontal cw-form padded" name="inlineFormExample">
+
+                <div class="form-group">
+                    <label class="cw-field-label col-xs-3 control-label">
+                        <span class="pull-left">HTML:</span>
+                    </label>
+                    <div class="col-xs-9 control-value">
+                        <textarea class="form-control" style="height: 250px;"></textarea>
+                    </div>
+                </div>
+
+            </ng-form>
+        </uib-tab>
+
+        <uib-tab>
+            <uib-tab-heading>Email</uib-tab-heading>
+            <ng-form class="form-horizontal cw-form padded" name="inlineFormExample">
+
+                <div class="form-group">
+                    <label class="cw-field-label col-xs-3 control-label">
+                        <span class="pull-left">HTML:</span>
+                    </label>
+                    <div class="col-xs-9 control-value">
+                        <textarea class="form-control" style="height: 250px;"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="cw-field-label col-xs-3 control-label">
+                        <span class="pull-left">Preview:</span>
+                    </label>
+                    <div class="col-xs-7 control-value">
+                        <input type="text" class="cw-text-field" placeholder="(enter email address)">
+                    </div>
+                    <div class="col-xs-2 control-value">
+                        <button type="button" class="btn btn-default btn-block">
+                            <span class="glyphicon glyphicon-envelope"></span>
+                            Send
+                        </button>
+                    </div>
+                </div>
+
+            </ng-form>
+        </uib-tab>
+
+        <uib-tab>
+            <uib-tab-heading>Alert</uib-tab-heading>
+            <ng-form class="form-horizontal cw-form padded" name="inlineFormExample">
+
+                <div class="form-group">
+                    <label class="cw-field-label col-xs-3 control-label">
+                        <span class="pull-left">HTML:</span>
+                    </label>
+                    <div class="col-xs-9 control-value">
+                        <textarea class="form-control" style="height: 250px;"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="cw-field-label col-xs-3 control-label">
+                        <span class="pull-left">Preview:</span>
+                    </label>
+                    <div class="col-xs-9 control-value">
+                        <div class="alert alert-info" style="margin: 0;">
+                            <strong>New Release Available!</strong><br/>
+                            LabTech 10.5 has just been released to you. <a class="alert-link">Click here.</a>
+                        </div>
+                    </div>
+                </div>
+
+            </ng-form>
+        </uib-tab>
+
+    </uib-tabset>
+
+
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default positive-action"
+            type="button" ng-click="main.ok()">
+        <span class="glyphicon glyphicon-floppy-disk"></span>
+        Save
+    </button>
+    <button class="btn btn-default"
+            type="button" ng-click="main.ok()">
+        Cancel
+    </button>
+</div>

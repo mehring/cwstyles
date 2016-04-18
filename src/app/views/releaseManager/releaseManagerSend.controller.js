@@ -5,7 +5,7 @@
         .module('cwstyles')
         .controller('ReleaseManagerSendController', ReleaseManagerSendController);
 
-    function ReleaseManagerSendController($scope, $templateCache) {
+    function ReleaseManagerSendController($scope, $templateCache, $uibModal) {
         var vm = this;
 
         vm.hoveredRow = -1;
@@ -22,14 +22,13 @@
             CompanyName: '',
             HasRelease: '',
             Market: '',
-            MarketingGroup: '',
+            KnownIssues: '',
             ReleaseOn: '',
+            Country: '',
             State: '',
             Status: '',
             Territory: '',
             Type: '',
-            KnownIssues: '',
-
 
         }
 
@@ -131,8 +130,14 @@
                     headerCellTemplate: vm.getColumnDefTemplate(prefix, 'market.html', true)
                 },
                 {
+                    name: 'Country',
+                    minWidth: 150,
+                    cellTemplate: vm.getColumnDefTemplate(prefix, 'country.html', false),
+                    headerCellTemplate: vm.getColumnDefTemplate(prefix, 'country.html', true)
+                },
+                {
                     name: 'State',
-                    minWidth: 50,
+                    minWidth: 120,
                     cellTemplate: vm.getColumnDefTemplate(prefix, 'state.html', false),
                     headerCellTemplate: vm.getColumnDefTemplate(prefix, 'state.html', true)
                 },
@@ -178,8 +183,9 @@
                     Territory: 'CW-US',
                     Type: 'PARTNER',
                     Market: 'Services',
+                    Country: 'United States',
                     State: 'FL',
-                    MarketingGroup: ''
+                    KnownIssues: ''
                 },
                 {
                     id: 1,
@@ -191,8 +197,9 @@
                     Territory: 'CW-US',
                     Type: 'PARTNER',
                     Market: 'Services',
+                    Country: 'United States',
                     State: 'FL',
-                    MarketingGroup: ''
+                    KnownIssues: ''
                 },
                 {
                     id: 2,
@@ -204,8 +211,9 @@
                     Territory: 'CW-US',
                     Type: 'PARTNER',
                     Market: 'Services',
+                    Country: 'United States',
                     State: 'FL',
-                    MarketingGroup: ''
+                    KnownIssues: ''
                 },
                 {
                     id: 3,
@@ -217,8 +225,9 @@
                     Territory: 'CW-US',
                     Type: 'PARTNER',
                     Market: 'Services',
+                    Country: 'United States',
                     State: 'FL',
-                    MarketingGroup: ''
+                    KnownIssues: ''
                 },
                 {
                     id: 4,
@@ -230,8 +239,9 @@
                     Territory: 'CW-US',
                     Type: 'PARTNER',
                     Market: 'Services',
+                    Country: 'United States',
                     State: 'FL',
-                    MarketingGroup: ''
+                    KnownIssues: ''
                 },
                 {
                     id: 5,
@@ -243,8 +253,9 @@
                     Territory: 'CW-US',
                     Type: 'PARTNER',
                     Market: 'Services',
+                    Country: 'United States',
                     State: 'FL',
-                    MarketingGroup: ''
+                    KnownIssues: ''
                 },
                 {
                     id: 6,
@@ -256,8 +267,9 @@
                     Territory: 'CW-US',
                     Type: 'PARTNER',
                     Market: 'Services',
+                    Country: 'United States',
                     State: 'FL',
-                    MarketingGroup: ''
+                    KnownIssues: ''
                 },
                 {
                     id: 7,
@@ -269,8 +281,9 @@
                     Territory: 'CW-US',
                     Type: 'PARTNER',
                     Market: 'Services',
+                    Country: 'United States',
                     State: 'FL',
-                    MarketingGroup: ''
+                    KnownIssues: ''
                 },
                 {
                     id: 8,
@@ -282,8 +295,9 @@
                     Territory: 'CW-US',
                     Type: 'PARTNER',
                     Market: 'Services',
+                    Country: 'United States',
                     State: 'FL',
-                    MarketingGroup: ''
+                    KnownIssues: ''
                 },
                 {
                     id: 9,
@@ -295,8 +309,9 @@
                     Territory: 'CW-US',
                     Type: 'PARTNER',
                     Market: 'Services',
+                    Country: 'United States',
                     State: 'FL',
-                    MarketingGroup: ''
+                    KnownIssues: ''
                 },
                 {
                     id: 10,
@@ -308,8 +323,9 @@
                     Territory: 'CW-US',
                     Type: 'PARTNER',
                     Market: 'Services',
+                    Country: 'United States',
                     State: 'FL',
-                    MarketingGroup: ''
+                    KnownIssues: ''
                 },
                 {
                     id: 11,
@@ -321,8 +337,9 @@
                     Territory: 'CW-US',
                     Type: 'PARTNER',
                     Market: 'Services',
+                    Country: 'United States',
                     State: 'FL',
-                    MarketingGroup: ''
+                    KnownIssues: ''
                 },
                 {
                     id: 12,
@@ -334,8 +351,9 @@
                     Territory: 'CW-US',
                     Type: 'PARTNER',
                     Market: 'Services',
+                    Country: 'United States',
                     State: 'FL',
-                    MarketingGroup: ''
+                    KnownIssues: ''
                 },
                 {
                     id: 13,
@@ -347,8 +365,9 @@
                     Territory: 'CW-US',
                     Type: 'PARTNER',
                     Market: 'Services',
+                    Country: 'United States',
                     State: 'FL',
-                    MarketingGroup: ''
+                    KnownIssues: ''
                 },
                 {
                     id: 14,
@@ -360,8 +379,9 @@
                     Territory: 'CW-US',
                     Type: 'PARTNER',
                     Market: 'Services',
+                    Country: 'United States',
                     State: 'FL',
-                    MarketingGroup: ''
+                    KnownIssues: ''
                 }
             ];
             vm.setUIGrid();
@@ -378,7 +398,22 @@
             });
         });
 
-    }
+        vm.openManageReleaseSendModal = function() {
 
+            var modalInstance = $uibModal.open({
+                template: $templateCache.get('app/views/releaseManager/modalManageReleaseSend.html'),
+                templateUrl: 'app/views/releaseManager/modalManageReleaseSend.html',
+                controller: 'ReleaseManagerModalManageReleaseSendController',
+                controllerAs: 'main',
+                backdrop: 'static'
+            });
+
+            modalInstance.opened.then(function() {
+                //modal is now open!
+            });
+
+        };
+
+    }
 
 })();

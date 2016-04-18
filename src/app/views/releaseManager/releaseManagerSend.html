@@ -49,10 +49,26 @@
             </div>
 
             <a class="btn btn-default positive-action btn-icon"
-               ng-click="main.sayRows()">
+               ng-click="main.openManageReleaseSendModal()">
                 <span class="glyphicon glyphicon-send"></span>
                 <span class="btn-icon-text">Send Release</span>
             </a>
+
+        </span>
+
+        <span class="pull-right">
+
+            <div class="btn-group">
+                <button type="button" class="btn btn-default">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </button>
+                <button type="button" class="btn btn-default">
+                    1-15 of 512 <span class="caret dropdown-icon" />
+                </button>
+                <button type="button" class="btn btn-default">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </button>
+            </div>
 
         </span>
 
@@ -65,5 +81,6 @@
          ui-grid-auto-resize
          ui-grid-pinning
          class="grid"></div>
+
 
 </div>

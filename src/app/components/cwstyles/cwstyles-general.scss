@@ -1,3 +1,26 @@
+a:hover { cursor: pointer; }
+
+.modal-backdrop { z-index: 10001 !important; }
+
+.modal { z-index: 10002 !important; }
+
+.modal-header {
+  padding: 14px 12px 12px 12px;
+  border-bottom: none;
+  .modal-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+}
+.modal-body {
+  padding: 0 12px;
+}
+.modal-footer {
+  padding: 12px;
+  border-top: none;
+  text-align: left;
+}
+
 .style-section {
   margin: 10px 0 20px 0;
 }

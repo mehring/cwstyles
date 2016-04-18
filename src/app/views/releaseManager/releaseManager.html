@@ -15,7 +15,7 @@
             <div class="cwtoolbar">
 
                 <span class="pull-left">
-                    <a class="btn btn-default btn-icon">
+                    <a class="btn btn-default btn-icon" ng-click="main.openManageReleaseModal()">
                         <span class="glyphicon glyphicon-plus"></span>
                         <span class="btn-icon-text">Add Release</span>
                     </a>
@@ -49,7 +49,8 @@
                         </a>
                     </td>
                     <td>
-                        <a href class="table-link">LabTech 10.5</a>
+                        <a ng-click="main.openManageReleaseModal()"
+                           class="table-link">LabTech 10.5</a>
                     </td>
                     <td>
                         105.226
@@ -77,14 +78,16 @@
                         </a>
                     </td>
                     <td>
-                        <a href class="table-link">LabTech 10.5 (copy)</a>
+                        <a ng-click="main.openManageReleaseModal()"
+                           class="table-link">LabTech 10.5 (copy)</a>
                     </td>
                     <td>
                         105.226
                     </td>
                     <td class="center-align action-button-cell">
                         <a class="btn btn-default positive-action btn-icon"
-                           ng-disabled="true">
+                           ng-disabled="true"
+                           uib-tooltip="(release not enabled)">
                             <span class="glyphicon glyphicon-send"></span>
                         </a>
                         <a class="btn btn-default btn-icon"
@@ -104,7 +107,8 @@
                         </a>
                     </td>
                     <td>
-                        <a href class="table-link">LabTech 10</a>
+                        <a ng-click="main.openManageReleaseModal()"
+                           class="table-link">LabTech 10</a>
                     </td>
                     <td>
                         100.332
@@ -132,7 +136,8 @@
                         </a>
                     </td>
                     <td>
-                        <a href class="table-link">LabTech 2013</a>
+                        <a ng-click="main.openManageReleaseModal()"
+                           class="table-link">LabTech 2013</a>
                     </td>
                     <td>
                         60.170
