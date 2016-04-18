@@ -24,16 +24,6 @@
 
         vm.currentState = $rootScope.$state.current.name;
 
-        vm.syncTopPosition = function() {
-            angular.element('.titlebar').css('top', angular.element($window).scrollTop() + 'px');
-        }
-
-        //sync titlebar position
-        vm.syncTopPosition();
-        angular.element($window).scroll(event, function() {
-            vm.syncTopPosition();
-        });
-
     }
   }
 

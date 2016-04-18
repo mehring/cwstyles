@@ -40,10 +40,10 @@
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
   color: #000000;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 1px solid #B3B3B3;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom: 1px solid #B3B3B3 !important;
   padding: 6px;
   height: 24px;
   box-sizing: border-box;
@@ -51,6 +51,8 @@
   -webkit-box-sizing: border-box;
   display: block;
   width: 100%;
+  -webkit-border-radius: 0 !important;
+  border-radius: 0 !important;
 }
 
 .cw-dropdown-container {

@@ -28,7 +28,7 @@
             State: '',
             Status: '',
             Territory: '',
-            Type: '',
+            Type: ''
 
         }
 
