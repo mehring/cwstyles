@@ -5,10 +5,11 @@
         .module('cwstyles')
         .controller('GridController', GridController);
 
-    function GridController($templateCache) {
+    function GridController($scope, $window, $templateCache) {
         var vm = this;
 
-        vm.uiGridData = [];
+        vm.$window = $window;
+        vm.gridHeight = '';
         vm.filters = {
 
             sort: {
@@ -484,6 +485,15 @@
         }
         vm.drawGrid();
 
+        //keep grid height synced to window
+        vm.syncGridHeight = function(windowHeight) { vm.gridHeight = (windowHeight - 185) + 'px'; };
+        vm.syncGridHeight($window.innerHeight);
+        $scope.$watch(angular.bind(vm, function() {
+            return vm.$window.innerHeight;
+        }), function(newValue) {
+            vm.syncGridHeight(newValue);
+            vm.drawGrid();
+        });
 
     }
 

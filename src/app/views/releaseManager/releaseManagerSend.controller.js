@@ -5,11 +5,13 @@
         .module('cwstyles')
         .controller('ReleaseManagerSendController', ReleaseManagerSendController);
 
-    function ReleaseManagerSendController($scope, $templateCache, $uibModal) {
+    function ReleaseManagerSendController($scope, $window, $templateCache, $uibModal) {
         var vm = this;
 
+        vm.$window = $window;
         vm.hoveredRow = -1;
         vm.uiGridData = [];
+        vm.gridHeight = '';
         vm.gridApi;
         vm.selectAllRows = false;
         vm.filters = {
@@ -387,6 +389,16 @@
             vm.setUIGrid();
         }
         vm.drawGrid();
+
+        //keep grid height synced to window
+        vm.syncGridHeight = function(windowHeight) { vm.gridHeight = (windowHeight - 185) + 'px'; };
+        vm.syncGridHeight($window.innerHeight);
+        $scope.$watch(angular.bind(vm, function() {
+            return vm.$window.innerHeight;
+        }), function(newValue) {
+            vm.syncGridHeight(newValue);
+            vm.drawGrid();
+        });
 
         //select / deselect all rows
         $scope.$watch(angular.bind(vm, function() {
