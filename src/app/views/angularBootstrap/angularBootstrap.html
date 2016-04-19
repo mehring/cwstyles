@@ -1,0 +1,37 @@
+<div class="btn-group cw-segmented-control">
+    <a ng-repeat="tab in main.tabs"
+       ng-click="main.currentTab = tab"
+       ng-class="{'btn': true,
+                  'btn-default': true,
+                  'active': main.currentTab == tab}">
+        {{ tab }}
+    </a>
+</div>
+
+<div class="body-content">
+
+    <ng-include src="'app/views/angularBootstrap/tabs/buttons/buttons.html'"
+                ng-if="main.currentTab == 'Buttons'"
+                ng-controller="ButtonsController as buttonsCtrl"></ng-include>
+
+    <ng-include src="'app/views/angularBootstrap/tabs/forms/forms.html'"
+                ng-if="main.currentTab == 'Forms'"
+                ng-controller="FormsController as formsCtrl"></ng-include>
+
+    <ng-include src="'app/views/angularBootstrap/tabs/grid/grid.html'"
+                ng-if="main.currentTab == 'Grid'"
+                ng-controller="GridController as gridCtrl"></ng-include>
+
+    <ng-include src="'app/views/angularBootstrap/tabs/modals/modals.html'"
+                ng-if="main.currentTab == 'Modals'"
+                ng-controller="ModalsController as modalsCtrl"></ng-include>
+
+    <ng-include src="'app/views/angularBootstrap/tabs/table/table.html'"
+                ng-if="main.currentTab == 'Table'"
+                ng-controller="TableController as tableCtrl"></ng-include>
+
+    <ng-include src="'app/views/angularBootstrap/tabs/tabs/tabs.html'"
+                ng-if="main.currentTab == 'Tabs'"
+                ng-controller="TabsController as tabsCtrl"></ng-include>
+
+</div>

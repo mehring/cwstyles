@@ -62,7 +62,7 @@
         }
 
         vm.getUIGridColumnDefs = function() {
-            var prefix = 'app/views/grid/cellTemplates/';
+            var prefix = 'app/views/angularBootstrap/tabs/grid/cellTemplates/';
             var columnDefs = [
                 {
                     name: 'Ticket',

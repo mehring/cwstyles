@@ -11,10 +11,10 @@
         vm.openExampleModal = function(size) {
 
             var modalInstance = $uibModal.open({
-                template: $templateCache.get('app/views/modals/exampleModal.html'),
-                templateUrl: 'app/views/modals/exampleModal.html',
+                template: $templateCache.get('app/views/angularBootstrap/tabs/modals/exampleModal.html'),
+                templateUrl: 'app/views/angularBootstrap/tabs/modals/exampleModal.html',
                 controller: 'ExampleModalController',
-                controllerAs: 'main',
+                controllerAs: 'exampleModalCtrl',
                 size: size
             });
 
