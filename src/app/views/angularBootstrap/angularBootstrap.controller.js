@@ -13,6 +13,7 @@
             'Buttons',
             'Forms',
             'Grid',
+            'Images',
             'Modals',
             'Table',
             'Tabs'

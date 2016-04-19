@@ -22,6 +22,10 @@
                 ng-if="main.currentTab == 'Grid'"
                 ng-controller="GridController as gridCtrl"></ng-include>
 
+    <ng-include src="'app/views/angularBootstrap/tabs/images/images.html'"
+                ng-if="main.currentTab == 'Images'"
+                ng-controller="ImagesController as imagesCtrl"></ng-include>
+
     <ng-include src="'app/views/angularBootstrap/tabs/modals/modals.html'"
                 ng-if="main.currentTab == 'Modals'"
                 ng-controller="ModalsController as modalsCtrl"></ng-include>
