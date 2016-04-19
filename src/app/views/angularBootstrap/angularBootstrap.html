@@ -26,6 +26,10 @@
                 ng-if="main.currentTab == 'Images'"
                 ng-controller="ImagesController as imagesCtrl"></ng-include>
 
+    <ng-include src="'app/views/angularBootstrap/tabs/loader/loader.html'"
+                ng-if="main.currentTab == 'Loader'"
+                ng-controller="LoaderController as loaderCtrl"></ng-include>
+
     <ng-include src="'app/views/angularBootstrap/tabs/modals/modals.html'"
                 ng-if="main.currentTab == 'Modals'"
                 ng-controller="ModalsController as modalsCtrl"></ng-include>

@@ -1,0 +1,33 @@
+<div class="body-content padded">
+
+    <div class="cwbreadcrumbs">
+        Angular Bootstrap
+        <span class="glyphicon glyphicon-menu-right"></span>
+        Loader
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6">
+            <ng-form class="form-horizontal cw-form" name="inlineFormExample">
+
+                <div class="form-group">
+                    <label class="cw-field-label col-xs-3 control-label">
+                        <span class="pull-left">Loading Text:</span>
+                    </label>
+                    <div class="col-xs-8 control-value">
+                        <input type="text"
+                               class="cw-text-field"
+                               ng-model="loaderCtrl.loadingText" />
+                    </div>
+                    <div class="col-xs-1 control-value">
+                        <a class="btn btn-default"
+                           ng-click="loaderCtrl.startLoader()">Load</a>
+                    </div>
+                </div>
+
+            </ng-form>
+        </div>
+
+    </div>
+
+</div>

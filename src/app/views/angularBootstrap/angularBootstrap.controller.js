@@ -14,6 +14,7 @@
             'Forms',
             'Grid',
             'Images',
+            'Loader',
             'Modals',
             'Table',
             'Tabs'
