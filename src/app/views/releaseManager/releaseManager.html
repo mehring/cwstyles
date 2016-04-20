@@ -1,4 +1,4 @@
-<div class="body-content padded">
+<div class="body-content padded" ng-show="!main.loadingData()">
 
     <div class="cwtoolbar">
         LabTech Release Manager
@@ -11,7 +11,7 @@
             <div class="cwtoolbar">
 
                 <span class="pull-left">
-                    <a class="btn btn-default btn-icon" ng-click="main.openManageReleaseModal()">
+                    <a class="btn btn-default btn-icon" ng-click="main.openManageReleaseModal(-1)">
                         <span class="glyphicon glyphicon-plus"></span>
                         <span class="btn-icon-text">Add Release</span>
                     </a>
@@ -38,105 +38,23 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
+                <tr ng-repeat="release in main.releaseService.releases">
                     <td class="center-align action-button-cell">
-                        <a class="btn btn-default btn-icon">
+                        <a class="btn btn-default btn-icon"
+                           ng-show="release.enabled">
                             <span class="glyphicon glyphicon-ok color-positive"></span>
                         </a>
-                    </td>
-                    <td>
-                        <a ng-click="main.openManageReleaseModal()"
-                           class="table-link">LabTech 10.5</a>
-                    </td>
-                    <td>
-                        105.226
-                    </td>
-                    <td class="center-align action-button-cell">
-                        <a class="btn btn-default positive-action btn-icon"
-                           href="#/release-manager-send"
-                           uib-tooltip="Send Release">
-                            <span class="glyphicon glyphicon-send"></span>
-                        </a>
                         <a class="btn btn-default btn-icon"
-                           uib-tooltip="Copy">
-                            <span class="glyphicon glyphicon-duplicate"></span>
-                        </a>
-                        <a class="btn btn-default negative-action btn-icon"
-                           uib-tooltip="Delete">
-                            <span class="glyphicon glyphicon-trash"></span>
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="center-align action-button-cell">
-                        <a class="btn btn-default btn-icon">
+                           ng-show="!release.enabled">
                             <span class="glyphicon glyphicon-remove color-negative"></span>
                         </a>
                     </td>
                     <td>
-                        <a ng-click="main.openManageReleaseModal()"
-                           class="table-link">LabTech 10.5 (copy)</a>
+                        <a ng-click="main.openManageReleaseModal(release.id)"
+                           class="table-link">{{ release.name }}</a>
                     </td>
                     <td>
-                        105.226
-                    </td>
-                    <td class="center-align action-button-cell">
-                        <a class="btn btn-default positive-action btn-icon"
-                           ng-disabled="true"
-                           uib-tooltip="(release not enabled)">
-                            <span class="glyphicon glyphicon-send"></span>
-                        </a>
-                        <a class="btn btn-default btn-icon"
-                           uib-tooltip="Copy">
-                            <span class="glyphicon glyphicon-duplicate"></span>
-                        </a>
-                        <a class="btn btn-default negative-action btn-icon"
-                           uib-tooltip="Delete">
-                            <span class="glyphicon glyphicon-trash"></span>
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="center-align action-button-cell">
-                        <a class="btn btn-default btn-icon">
-                            <span class="glyphicon glyphicon-ok color-positive"></span>
-                        </a>
-                    </td>
-                    <td>
-                        <a ng-click="main.openManageReleaseModal()"
-                           class="table-link">LabTech 10</a>
-                    </td>
-                    <td>
-                        100.332
-                    </td>
-                    <td class="center-align action-button-cell">
-                        <a class="btn btn-default positive-action btn-icon"
-                           href="#/release-manager-send"
-                           uib-tooltip="Send Release">
-                            <span class="glyphicon glyphicon-send"></span>
-                        </a>
-                        <a class="btn btn-default btn-icon"
-                           uib-tooltip="Copy">
-                            <span class="glyphicon glyphicon-duplicate"></span>
-                        </a>
-                        <a class="btn btn-default negative-action btn-icon"
-                           uib-tooltip="Delete">
-                            <span class="glyphicon glyphicon-trash"></span>
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="center-align action-button-cell">
-                        <a class="btn btn-default btn-icon">
-                            <span class="glyphicon glyphicon-ok color-positive"></span>
-                        </a>
-                    </td>
-                    <td>
-                        <a ng-click="main.openManageReleaseModal()"
-                           class="table-link">LabTech 2013</a>
-                    </td>
-                    <td>
-                        60.170
+                        {{ release.agentVersionMin }} - {{ release.agentVersionMax }}
                     </td>
                     <td class="center-align action-button-cell">
                         <a class="btn btn-default positive-action btn-icon"

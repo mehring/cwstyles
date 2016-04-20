@@ -5,10 +5,10 @@
         .module('cwstyles')
         .controller('ImagesController', ImagesController);
 
-    function ImagesController(urlService) {
+    function ImagesController(globalService) {
         var vm = this;
 
-        vm.urlService = urlService;
+        vm.urlService = globalService.urlService;
 
     }
 

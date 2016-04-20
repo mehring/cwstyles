@@ -1,5 +1,5 @@
-<div ng-if="cwloaderCtrl.loadingCnt > 0" class="cwloader-bg"></div>
-<div ng-if="cwloaderCtrl.loadingCnt > 0" class="cwloader-box">
-    <img ng-src="{{ cwloaderCtrl.urlService.getResourcePrefix() }}assets/images/loading.gif" />
-    <div class="loadingText">{{ cwloaderCtrl.loadingText }}</div>
+<div ng-if="cwloaderCtrl.globalService.loaderService.loadingCnt > 0" class="cwloader-bg"></div>
+<div ng-if="cwloaderCtrl.globalService.loaderService.loadingCnt > 0" class="cwloader-box">
+    <img ng-src="{{ cwloaderCtrl.globalService.urlService.getResourcePrefix() }}assets/images/loading.gif" />
+    <div class="loadingText">{{ cwloaderCtrl.globalService.loaderService.loadingText }}</div>
 </div>

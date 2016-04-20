@@ -19,12 +19,10 @@
     return directive;
 
     /** @ngInject */
-    function CWLoaderController($rootScope, $window, urlService, $timeout) {
+    function CWLoaderController($rootScope, $window, $timeout, globalService) {
         var vm = this;
 
-        vm.urlService = urlService;
-        vm.loadingCnt = 0;
-        vm.loadingText = 'Please wait...';
+        vm.globalService = globalService;
 
         vm.windowWidth = $window.innerWidth;
         vm.windowHeight = $window.innerHeight;
@@ -45,17 +43,8 @@
             vm.syncResize();
         });
 
-        vm.onLoaderChange = $rootScope.$on('CWLOADER_CHANGE', function(event, value) {
-            vm.loadingText = value;
-        });
-
-        vm.onLoaderAdd = $rootScope.$on('CWLOADER_ADD', function() {
-            vm.loadingCnt++;
+        vm.onLoaderAdd = $rootScope.$on('CWLOADER_UPDATE', function() {
             $timeout(function() { vm.syncResize(); }, 10);
-        });
-
-        vm.onLoaderRemove = $rootScope.$on('CWLOADER_REMOVE', function() {
-            vm.loadingCnt--;
         });
 
     }

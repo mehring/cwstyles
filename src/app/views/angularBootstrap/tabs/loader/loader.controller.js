@@ -5,16 +5,16 @@
         .module('cwstyles')
         .controller('LoaderController', LoaderController);
 
-    function LoaderController($rootScope, $timeout) {
+    function LoaderController(globalService, $timeout) {
         var vm = this;
 
         vm.loadingText = 'Loading...';
 
         vm.startLoader = function() {
-            $rootScope.$broadcast('CWLOADER_CHANGE', vm.loadingText);
-            $rootScope.$broadcast('CWLOADER_ADD', 1);
+            globalService.loaderService.changeLoaderMessage(vm.loadingText);
+            globalService.loaderService.addLoadValue(1);
             $timeout(function() {
-                $rootScope.$broadcast('CWLOADER_REMOVE', 1);
+                globalService.loaderService.removeLoadValue(1);
             }, 2000);
         }
 

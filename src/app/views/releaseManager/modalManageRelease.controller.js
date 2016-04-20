@@ -5,18 +5,64 @@
         .module('cwstyles')
         .controller('ReleaseManagerModalManageReleaseController', ReleaseManagerModalManageReleaseController);
 
-    function ReleaseManagerModalManageReleaseController($uibModalInstance) {
+    function ReleaseManagerModalManageReleaseController($log,
+                                                        $uibModalInstance,
+                                                        releaseService,
+                                                        releaseId) {
         var vm = this;
 
+        vm.releaseService = releaseService;
+        vm.releaseId = releaseId;
         vm.showModalPreview = false;
 
-        vm.formData = {
-            modalHTML: '<div style="text-align:left;"><p>When performing an upgrade from previous LabTech versions, all normal system settings and custom configurations will be preserved.</p><p><strong>*** If you have edited your LabTech Web Portal, upgrading LabTech will overwrite it back to the default settings. Please backup any web customizations before upgrading your LabTech system. ***</strong></p><p>Clean installs can be performed by the same installer.</p><ul><li><a href="https://docs.labtechsoftware.com/LabTech2013/Default.htm#GettingStarted/1.GettingStarted.htm#" target="_blank">LabTech Getting Started Guide</a></li><li><a href="http://www.labtechsoftware.com/pdf/Technical-Requirements.pdf" target="_blank">LabTech Tech Specs</a></li></ul></div>',
-            alertHTML: '<strong>New Release Available!</strong><br/>LabTech 10.5 has just been released to you. <a class="alert-link">Click here.</a>'
+        vm.resetFormData = function() {
+            vm.formData = {
+                id: -1,
+                name: '',
+                agentVersionMin: '',
+                agentVersionMax: '',
+                marketingGroup: '',
+                downloadUrl: '',
+                prerequisiteId: null,
+                enabled: false,
+                emailHtml: '',
+                modalHtml: '',
+                alertHtml: '',
+                createdDate: -1,
+                updatedDate: -1
+            }
+        };
+        vm.resetFormData();
+
+        vm.setFormData = function(releaseId) {
+            vm.resetFormData();
+            angular.forEach(releaseService.releases, function(release) {
+                if (release.id == releaseId) {
+                    vm.formData.id = release.id;
+                    vm.formData.name = release.name;
+                    vm.formData.agentVersionMin = release.agentVersionMin;
+                    vm.formData.agentVersionMax = release.agentVersionMax;
+                    vm.formData.marketingGroup = release.marketingGroup;
+                    vm.formData.downloadUrl = release.downloadUrl;
+                    vm.formData.prerequisiteId = release.prerequisiteId;
+                    vm.formData.enabled = release.enabled;
+                    vm.formData.emailHtml = release.emailHtml;
+                    vm.formData.modalHtml = release.modalHtml;
+                    vm.formData.alertHtml = release.alertHtml;
+                    vm.formData.createdDate = release.createdDate;
+                    vm.formData.updatedDate = release.updatedDate;
+                }
+            })
+
         }
+        vm.setFormData(vm.releaseId);
 
         vm.ok = function () {
             $uibModalInstance.dismiss('OK');
+        };
+
+        vm.cancel = function () {
+            $uibModalInstance.dismiss('Canceled');
         };
 
     }
