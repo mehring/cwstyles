@@ -23,7 +23,7 @@
             })
 
             .state('release-manager-send', {
-                url: '/release-manager-send',
+                url: '/release-manager-send/{releaseId}',
                 templateUrl: 'app/views/releaseManager/releaseManagerSend.html',
                 controller: 'ReleaseManagerSendController',
                 controllerAs: 'main'

@@ -5,10 +5,18 @@
         .module('cwstyles')
         .controller('ReleaseManagerSendController', ReleaseManagerSendController);
 
-    function ReleaseManagerSendController($scope, $window, $templateCache, $uibModal) {
+    function ReleaseManagerSendController($log,
+                                          $scope,
+                                          $rootScope,
+                                          $window,
+                                          $templateCache,
+                                          $uibModal,
+                                          releaseService) {
         var vm = this;
 
         vm.$window = $window;
+        vm.releaseService = releaseService;
+        vm.release = null;
         vm.hoveredRow = -1;
         vm.uiGridData = [];
         vm.gridHeight = '';
@@ -400,6 +408,16 @@
             vm.drawGrid();
         });
 
+        //sets the current release from release service based on url param
+        vm.setRelease = function() {
+            angular.forEach(releaseService.releases, function(release) {
+                if (release.id == $rootScope.$stateParams.releaseId) {
+                    vm.release = release;
+                }
+            });
+        }
+        vm.setRelease();
+
         //select / deselect all rows
         $scope.$watch(angular.bind(vm, function() {
             return vm.selectAllRows;
@@ -408,6 +426,10 @@
             angular.forEach(rows, function(row) {
                 row.entity.checked = newValue;
             });
+        });
+
+        $rootScope.$on('RELEASESERVICE_RECEIVED_RELEASES', function(event, data) {
+           vm.setRelease();
         });
 
         vm.openManageReleaseSendModal = function() {

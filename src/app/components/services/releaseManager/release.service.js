@@ -5,6 +5,7 @@
     .module('cwstyles')
     .factory('releaseService', function($log,
                                         $http,
+                                        $rootScope,
                                         globalService) {
           var s = this;
 
@@ -19,6 +20,7 @@
               $http({method:'GET', url:url}).
                   success(function(data) {
                       s.releases = data.releases;
+                      $rootScope.$broadcast('RELEASESERVICE_RECEIVED_RELEASES', s.releases);
                       globalService.loaderService.removeLoadValue(1);
                   }).
                   error(function() {
