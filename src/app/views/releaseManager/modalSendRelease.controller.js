@@ -3,9 +3,9 @@
 
     angular
         .module('cwstyles')
-        .controller('ReleaseManagerModalManageReleaseSendController', ReleaseManagerModalManageReleaseSendController);
+        .controller('ReleaseManagerModalSendReleaseController', ReleaseManagerModalSendReleaseController);
 
-    function ReleaseManagerModalManageReleaseSendController($uibModalInstance) {
+    function ReleaseManagerModalSendReleaseController($uibModalInstance) {
         var vm = this;
 
         vm.ok = function () {

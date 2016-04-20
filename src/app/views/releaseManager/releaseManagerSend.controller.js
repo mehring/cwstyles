@@ -413,9 +413,9 @@
         vm.openManageReleaseSendModal = function() {
 
             var modalInstance = $uibModal.open({
-                template: $templateCache.get('app/views/releaseManager/modalManageReleaseSend.html'),
-                templateUrl: 'app/views/releaseManager/modalManageReleaseSend.html',
-                controller: 'ReleaseManagerModalManageReleaseSendController',
+                template: $templateCache.get('app/views/releaseManager/modalSendRelease.html'),
+                templateUrl: 'app/views/releaseManager/modalSendRelease.html',
+                controller: 'ReleaseManagerModalSendReleaseController',
                 controllerAs: 'main',
                 backdrop: 'static'
             });

@@ -14,7 +14,7 @@
                 template: $templateCache.get('app/views/releaseManager/modalManageRelease.html'),
                 templateUrl: 'app/views/releaseManager/modalManageRelease.html',
                 controller: 'ReleaseManagerModalManageReleaseController',
-                controllerAs: 'main',
+                controllerAs: 'manageReleaseCtrl',
                 backdrop: 'static'
             });
 

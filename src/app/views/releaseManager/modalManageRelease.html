@@ -85,7 +85,47 @@
                         <span class="pull-left">HTML:</span>
                     </label>
                     <div class="col-xs-9 control-value">
-                        <textarea class="form-control" style="height: 250px;"></textarea>
+                        <textarea ng-model="manageReleaseCtrl.formData.modalHTML"
+                                  class="form-control"
+                                  style="height: 250px;"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="cw-field-label col-xs-3 control-label">
+                        <span class="pull-left">Preview:</span>
+                    </label>
+                    <div class="col-xs-9 control-value">
+                        <button type="button"
+                                ng-click="manageReleaseCtrl.showModalPreview = !manageReleaseCtrl.showModalPreview"
+                                class="btn btn-default">
+                            <span ng-if="!manageReleaseCtrl.showModalPreview">
+                                Show <span class="glyphicon glyphicon glyphicon-chevron-down"></span>
+                            </span>
+                            <span ng-if="manageReleaseCtrl.showModalPreview">
+                                Hide <span class="glyphicon glyphicon glyphicon-chevron-up"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     style="margin: 0;"
+                     ng-show="manageReleaseCtrl.showModalPreview">
+                    <div class="col-xs-12 release-modal-preview">
+                        <div class="modal-content">
+                            <div class="modal-header portal-modal-header">
+                                <h4 class="modal-title">Download LabTech 10.5</h4>
+                            </div>
+                            <div class="modal-body portal-modal-body">
+                                <span ng-bind-html="manageReleaseCtrl.formData.modalHTML"></span>
+                            </div>
+                            <div class="modal-footer portal-modal-footer">
+                                <input type="checkbox" /> I acknowledge the above information. Enable the download button.
+                                <a class="btn btn-success pull-right">Download</a>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
                     </div>
                 </div>
 
@@ -132,7 +172,9 @@
                         <span class="pull-left">HTML:</span>
                     </label>
                     <div class="col-xs-9 control-value">
-                        <textarea class="form-control" style="height: 250px;"></textarea>
+                        <textarea class="form-control"
+                                  ng-model="manageReleaseCtrl.formData.alertHTML"
+                                  style="height: 250px;"></textarea>
                     </div>
                 </div>
 
@@ -141,9 +183,9 @@
                         <span class="pull-left">Preview:</span>
                     </label>
                     <div class="col-xs-9 control-value">
-                        <div class="alert alert-info" style="margin: 0;">
-                            <strong>New Release Available!</strong><br/>
-                            LabTech 10.5 has just been released to you. <a class="alert-link">Click here.</a>
+                        <div class="alert alert-info"
+                             style="margin: 0;">
+                            <span ng-bind-html="manageReleaseCtrl.formData.alertHTML"></span>
                         </div>
                     </div>
                 </div>
@@ -157,12 +199,12 @@
 </div>
 <div class="modal-footer">
     <a class="btn btn-default positive-action"
-       ng-click="main.ok()">
+       ng-click="manageReleaseCtrl.ok()">
         <span class="glyphicon glyphicon-floppy-disk"></span>
         Save
     </a>
     <a class="btn btn-default"
-       ng-click="main.ok()">
+       ng-click="manageReleaseCtrl.ok()">
         Cancel
     </a>
 </div>
